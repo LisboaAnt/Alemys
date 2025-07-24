@@ -13,6 +13,7 @@
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
     } from "@/components/ui/navigation-menu"
+import Image from "next/image"
 
     const components: { title: string; href: string; description: string }[] = [
     {
@@ -54,8 +55,16 @@
 
     export function NavigationMenuDemo() {
     return (
-        <div className="flex justify-center bg-gradient-to-r from-blue-900 to-blue-950 p-5">
-        <NavigationMenu viewport={false}>
+        <div className="flex justify-center bg-gradient-to-r from-blue-900 to-blue-950 p-5 w-full">
+            <div className="w-7xl justify-between flex">
+
+                <div className="esq flex gap-2 items-center justify-center h-10">
+                    <Image className="w-15 h-15" src="/imgs/logo2.png" alt="logo" width={200} height={200} />
+                    <h1 className="text-white text-2xl font-eastman-roman tracking-[0.15em]">ALÉMSY</h1> 
+                </div>
+
+
+        <NavigationMenu viewport={false} className="z-10">
         <NavigationMenuList>
             <NavigationMenuItem>
             <NavigationMenuTrigger>Home</NavigationMenuTrigger>
@@ -158,35 +167,9 @@
                 </ul>
             </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-            <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
-            <NavigationMenuContent>
-                <ul className="grid w-[200px] gap-4">
-                <li>
-                    <NavigationMenuLink asChild>
-                    <Link href="#" className="flex-row items-center gap-2">
-                        <CircleHelpIcon />
-                        Backlog
-                    </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                    <Link href="#" className="flex-row items-center gap-2">
-                        <CircleIcon />
-                        To Do
-                    </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                    <Link href="#" className="flex-row items-center gap-2">
-                        <CircleCheckIcon />
-                        Done
-                    </Link>
-                    </NavigationMenuLink>
-                </li>
-                </ul>
-            </NavigationMenuContent>
-            </NavigationMenuItem>
         </NavigationMenuList>
         </NavigationMenu>
+        </div>
         </div>
     )
     }
