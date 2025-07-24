@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <div className="font-sans ">
-      Hello World
+    <div className="flex max-w-">
+      <Hero/>
     </div>
-  );
+  )
 }
