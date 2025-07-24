@@ -12,7 +12,7 @@ import { useRef } from "react"
 export default function Hero() {
     const plugin = useRef(
         Autoplay({
-            delay: 5000,
+            delay: 1000,
             stopOnInteraction: false,
             stopOnMouseEnter: true,
         })
@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="flex lg:min-h-[30em] justify-center items-center bg-gradient-to-r from-blue-950 via-blue-950 to-[rgba(0,0,0,0)]">
             <div className="absolute -z-1 right-0 lg:w-[65em] h-[30em] overflow-hidden">
                 <Carousel plugins={[plugin.current]} opts={{ loop: true }}>
-                    <CarouselContent  className="transition-transform duration-1000 ease-in-out">
+                    <CarouselContent>
                         <CarouselItem>
                             <img src="https://assets-blog.pagseguro.uol.com.br/wp-content/2023/05/shutterstock_2029125182-1-min.jpg" alt="Imagem 1"/>
                         </CarouselItem>
