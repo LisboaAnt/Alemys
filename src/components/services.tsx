@@ -10,7 +10,7 @@ import ServiceCard from "./serviceCard";
 export default function Services() {
     return (
         <section className="w-full flex justify-center py-5">
-            <div className="w-7xl flex flex-col justify-center gap-3 py-5 px-10">
+            <div className="w-7xl flex flex-col justify-center gap-5 px-10">
                 <h1 className="text-2xl font-bold text-left text-(--foreground)">
                     Nossos Serviços
                 </h1>

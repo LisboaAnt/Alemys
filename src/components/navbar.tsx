@@ -30,7 +30,7 @@ export function NavigationMenuDemo() {
     };
 
     return (
-        <div className="flex justify-center bg-gray-50 p-5 w-full">
+        <div className="flex justify-center bg-gradient-to-r from-blue-900 to-blue-950 p-5 w-full">
             <div className="w-7xl justify-between flex">
 
                 <div className="esq flex gap-2 items-center justify-center h-10">
@@ -38,22 +38,22 @@ export function NavigationMenuDemo() {
                     <h1 className=" text-2xl text-blue-950 font-eastman-roman tracking-[0.15em]">ALÉMSY</h1> 
                 </div>
 
-                <div className="flex gap-4 items-center justify-center h-10 ">
+                <div className="flex gap-5 items-center justify-center h-10 text-(--background)">
                     <Link href="/">
-                        {t('home')}
+                        <Button variant="ghost">{t('home')}</Button>
                     </Link>
                     <Link href="/">
-                        {t('about')}
+                        <Button variant="ghost">{t('about')}</Button>
                     </Link>
                     <Link href="/">
-                        {t('services')}
+                        <Button variant="ghost">{t('services')}</Button>
                     </Link>
                     <Link href="/">
-                        {t('contact')}
+                        <Button variant="ghost">{t('contact')}</Button>
                     </Link>
-                    <div className="relative">
+                    <div className="relative text-(--foreground)">
                         <Button 
-                            className="w-25"
+                            className="w-25 text-(--foreground)"
                             variant="outline" 
                             size="sm"
                             onClick={() => setShowLanguageMenu(!showLanguageMenu)}

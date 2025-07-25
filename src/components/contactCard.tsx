@@ -19,7 +19,7 @@ export default function ContactCard() {
     const t = useTranslations('contact');
     
     return(
-        <Card className="w-full max-w-2/3">
+        <Card className="w-full max-w-2/3 bg-gray-50">
             <CardHeader>
                 <CardTitle>{t('title')}</CardTitle>
                 <CardDescription>{t('description')}</CardDescription>
@@ -30,15 +30,16 @@ export default function ContactCard() {
                         <div className="grid gap-2">
                             <Label htmlFor="email">{t('email')}</Label>
                             <Input
+                                className="bg-white"
                                 id="email"
                                 type="email"
-                                placeholder="m@example.com"
+                                placeholder="example@example.com"
                                 required
                             />
                         </div>
                         <div className="grid gap-2">
                             <Label htmlFor="message">{t('message')}</Label>
-                            <Textarea id="message" required/>
+                            <Textarea className="bg-white" id="message" placeholder="Type your message here..." required/>
                         </div>
                     </div>
                 </form>

@@ -13,7 +13,7 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ title, description }: ServiceCardProps) {
   return (
-    <Card className="text-center">
+    <Card className="text-center bg-gray-50">
       <CardHeader>
         <img
           src="https://www.svgrepo.com/show/477025/computer.svg"
