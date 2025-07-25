@@ -1,13 +1,12 @@
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
-import Services from "@/components/services";
 import ContactUs from "@/components/contact";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <div className="flex flex-col">
       <Hero/>
-      <Services/>
       <ContactUs/>
       <Footer/>
     </div>

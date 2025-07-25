@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Lösungen, die über den Code hinausgehen, über das Offensichtliche hinaus.",
+    "subtitle": "Verwandeln Sie Ideen in Ergebnisse mit Technologie, Kreativität und Innovation.",
+    "button": "Kontaktieren Sie uns"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "language": "Sprache"
+  },
+  "contact": {
+    "leftSection": "Linker Bereich",
+    "title": "Kontaktieren Sie uns",
+    "description": "Senden Sie uns eine Nachricht, damit wir Ihr Problem lösen können.",
+    "email": "Geben Sie Ihre E-Mail-Adresse ein:",
+    "message": "Geben Sie Ihre Nachricht ein:",
+    "submit": "Nachricht senden"
+  }
+}

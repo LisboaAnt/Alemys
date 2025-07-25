@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Soluciones que van más allá del código, más allá de lo obvio.",
+    "subtitle": "Transforme ideas en resultados con tecnología, creatividad e innovación.",
+    "button": "Contáctenos"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "contact": {
+    "leftSection": "Sección Izquierda",
+    "title": "Contáctenos",
+    "description": "Envíenos un mensaje para que podamos resolver su problema.",
+    "email": "Ingrese su correo electrónico:",
+    "message": "Escriba su mensaje:",
+    "submit": "Enviar mensaje"
+  }
+}

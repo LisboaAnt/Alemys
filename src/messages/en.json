@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "title": "Solutions that go beyond code, beyond the obvious.",
+    "subtitle": "Transform ideas into results with technology, creativity and innovation.",
+    "button": "Contact us"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact Us",
+    "language": "Language"
+  },
+  "contact": {
+    "leftSection": "Left Section",
+    "title": "Contact Us",
+    "description": "Send us a message so we can solve your problem.",
+    "email": "Enter your email:",
+    "message": "Type your message:",
+    "submit": "Send message"
+  }
+}
