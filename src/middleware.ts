@@ -3,9 +3,12 @@ import {locales} from './config';
 
 export default createMiddleware({
     locales,
-    defaultLocale: 'en',
+    defaultLocale: 'pt',
+    // Adicionar barra no final para garantir que as rotas sejam correspondidas corretamente
+    localePrefix: 'always'
 });
 
 export const config = {
-    matcher: ['/', '/(en|pt|es|de)/:path*']
+    // Matcher configurado para ignorar rotas estáticas como imagens, fontes, etc.
+    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

@@ -8,6 +8,8 @@ import { useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { locales } from '@/config'
 import { useState } from 'react'
+import { FaGlobe } from "react-icons/fa";
+
 
 export function NavigationMenuDemo() {
     const t = useTranslations('nav');
@@ -28,15 +30,15 @@ export function NavigationMenuDemo() {
     };
 
     return (
-        <div className="flex justify-center bg-gray-950 p-5 w-full">
+        <div className="flex justify-center bg-gray-50 p-5 w-full">
             <div className="w-7xl justify-between flex">
 
                 <div className="esq flex gap-2 items-center justify-center h-10">
                     <Image className="w-15 h-15" src="/imgs/logo2.png" alt="logo" width={200} height={200} />
-                    <h1 className="text-white text-2xl font-eastman-roman tracking-[0.15em]">ALÉMSY</h1> 
+                    <h1 className=" text-2xl text-blue-950 font-eastman-roman tracking-[0.15em]">ALÉMSY</h1> 
                 </div>
 
-                <div className="flex gap-4 items-center justify-center h-10 text-white">
+                <div className="flex gap-4 items-center justify-center h-10 ">
                     <Link href="/">
                         {t('home')}
                     </Link>
@@ -51,19 +53,21 @@ export function NavigationMenuDemo() {
                     </Link>
                     <div className="relative">
                         <Button 
+                            className="w-25"
                             variant="outline" 
                             size="sm"
                             onClick={() => setShowLanguageMenu(!showLanguageMenu)}
                         >
+                            <FaGlobe />
                             {t('language')}
                         </Button>
                         {showLanguageMenu && (
-                            <div className="absolute top-full mt-1 right-0 bg-gray-900 rounded-md shadow-lg z-50">
+                            <div className="absolute bg-gray-50 top-full mt-1 right-0 rounded-md shadow-lg z-50">
                                 {locales.map((locale) => (
                                     <button
                                         key={locale}
                                         onClick={() => handleLanguageChange(locale)}
-                                        className="block px-4 py-2 text-sm text-white hover:bg-gray-800 w-full text-left"
+                                        className="block px-4 py-2 text-sm  hover:bg-gray-200 w-full text-left rounded-md"
                                     >
                                         {locale === 'en' ? 'English' : 
                                         locale === 'pt' ? 'Português' : 

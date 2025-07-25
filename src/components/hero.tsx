@@ -8,8 +8,10 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from 'embla-carousel-autoplay'
 import { useRef, useState } from "react"
+import { useTranslations } from "next-intl"
 
 export default function Hero() {
+    const t = useTranslations('hero');
     const [api, setApi] = useState<unknown>()
     const autoplay = useRef(
         Autoplay({
@@ -49,13 +51,13 @@ export default function Hero() {
             <section className="mx-auto w-full flex flex-row items-center max-w-7xl relative z-10">
                 <div className="w-full px-4 md:w-1/2 flex flex-col items-start gap-6 md:gap-10 md:px-25">
                     <h1 className="text-3xl md:text-4xl font-bold text-(--background)">
-                        Soluções que vão além do código, além do óbvio.
+                        {t('title')}
                     </h1>
                     <h4 className="text-base md:text-lg text-(--background)">
-                        Transforme ideias em resultados com tecnologia, criatividade e inovação.
+                        {t('subtitle')}
                     </h4>
                     <Button variant="default" size="lg" className="w-full">
-                        Fale conosco
+                        {t('button')}
                     </Button>
                 </div>
             </section>

@@ -18,5 +18,29 @@
     "email": "Ingrese su correo electrónico:",
     "message": "Escriba su mensaje:",
     "submit": "Enviar mensaje"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "service1": {
+      "title": "Desarrollo Web",
+      "description": "Sitios web modernos y responsivos",
+      "content": "Creamos soluciones web personalizadas que satisfacen las necesidades de su negocio utilizando las últimas tecnologías."
+    },
+    "service2": {
+      "title": "Desarrollo Móvil",
+      "description": "Aplicaciones para iOS y Android",
+      "content": "Aplicaciones móviles nativas y multiplataforma con interfaces intuitivas y excelente rendimiento."
+    },
+    "service3": {
+      "title": "Transformación Digital",
+      "description": "Moderniza tu negocio",
+      "content": "Ayudamos a las empresas a implementar soluciones digitales que optimizan procesos y aumentan la productividad."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Alémsys. Todos los derechos reservados.",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "contact": "Contacto"
   }
 }
