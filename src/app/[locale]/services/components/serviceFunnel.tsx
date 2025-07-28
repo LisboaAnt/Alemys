@@ -17,7 +17,6 @@ import {
     FaPalette, FaLayerGroup, FaUsersCog, FaCheck, FaClock
 } from "react-icons/fa";
 
-
 // Tipos para o funil de leads
 type ServiceCategory = "new" | "maintenance" | "mentoring" | null;
 type ServiceType = string | null;
@@ -326,14 +325,14 @@ export default function ServiceFunnel() {
     
     // Etapa 1: Seleção de categoria
     const renderCategorySelection = () => (
-        <section className="w-full mx-auto px-4 pt-4 lg:pt-12 max-w-6xl">
+        <section className="w-full mx-auto px-4 pt-4 lg:pt-12">
             <h1 className="text-5xl text-gray-800 font-bold text-center mb-2">O que está buscando?</h1>
             <p className="text-center mb-8 text-gray-600 text-lg max-w-2xl mx-auto">
                 Nós oferecemos uma ampla gama de serviços para atender a sua necessidade.
                 Selecione a opção que melhor descreve o que você está buscando.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                 <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => selectCategory("new")}>
                     <CardHeader className="text-center">
                         {getCategoryIcon("new")}
@@ -451,7 +450,7 @@ export default function ServiceFunnel() {
     
     // Etapa 3: Seleção de tamanho do projeto
     const renderProjectSizeSelection = () => (
-        <section className="w-full mx-auto px-4 py-8 max-w-6xl">
+        <section className="w-full mx-auto w-full mx-auto px-4 py-8 max-w-6xl">
             <Button variant="outline" onClick={() => setStep(2)} className="mb-6 bg-gray-100 hover:bg-gray-200">
                 ← Voltar
             </Button>
@@ -497,7 +496,7 @@ export default function ServiceFunnel() {
     
     // Etapa 4: Formulário de detalhes do projeto
     const renderProjectDetailsForm = () => (
-        <section className="w-full mx-auto px-4 py-8 max-w-6xl">
+        <section className="w-full mx-auto px-4 py-8 max-w-4xl">
             <Button variant="outline" onClick={() => setStep(3)} className="mb-6 bg-gray-100 hover:bg-gray-200">
                 ← Voltar
             </Button>
@@ -507,12 +506,12 @@ export default function ServiceFunnel() {
                 Forneça mais informações para ajustarmos seu orçamento:
             </p>
             
-            <Card className="max-w-4xl mx-auto">
+            <Card>
                 <CardContent className="p-6">
                     <form onSubmit={updateProjectDetails} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <Label htmlFor="clientCount">Quantidade estimada de usuários/clientes mensais</Label>
+                                <Label htmlFor="clientCount">Quantidade estimada de usuários/clientes</Label>
                                 <Input 
                                     id="clientCount" 
                                     name="clientCount" 
@@ -571,7 +570,7 @@ export default function ServiceFunnel() {
     
     // Etapa 5: Formulário de contato
     const renderContactForm = () => (
-        <section className="w-full mx-auto px-4 py-8 max-w-6xl">
+        <section className="w-full mx-auto px-4 py-8 max-w-4xl">
             <Button variant="outline" onClick={() => setStep(4)} className="mb-6 bg-gray-100 hover:bg-gray-200">
                 ← Voltar
             </Button>
@@ -597,7 +596,7 @@ export default function ServiceFunnel() {
                 *Este é apenas um valor estimado. O orçamento final pode variar após análise detalhada.
             </p>
             
-            <Card className="max-w-4xl mx-auto">
+            <Card>
                 <CardHeader>
                     <CardTitle>Seus dados para contato</CardTitle>
                     <CardDescription>
@@ -662,7 +661,39 @@ export default function ServiceFunnel() {
     
     // Etapa 6: Tela de agradecimento
     const renderThankYouScreen = () => (
-        <ThankYouScreen/>
+        <section className="w-full mx-auto px-4 py-16 text-center max-w-4xl">
+            <h1 className="text-4xl font-bold mb-4">Obrigado pelo seu interesse!</h1>
+            <p className="text-xl mb-8">
+                Recebemos suas informações e entraremos em contato em breve para discutir seu projeto.
+            </p>
+            
+            <div className="p-6 rounded-lg mb-8 bg-gray-50">
+                <h2 className="text-2xl font-semibold mb-4">Resumo do seu projeto</h2>
+                <div className="text-left space-y-2 max-w-md mx-auto">
+                    <p><strong>Tipo de serviço:</strong> {leadData.serviceType}</p>
+                    <p><strong>Tamanho do projeto:</strong> {
+                        leadData.projectSize === "small" ? "Pequeno" : 
+                        leadData.projectSize === "medium" ? "Médio" : "Grande"
+                    }</p>
+                    {(() => {
+                        const price = leadData.estimatedPrice ?? 0;
+                        const lowerBound = price * 0.8;
+                        const upperBound = price * 1.2;
+
+                        return (
+                            <>
+                            <p><strong>Orçamento estimado:</strong> R$ {lowerBound.toLocaleString('pt-BR')} à R$ {upperBound.toLocaleString('pt-BR')}</p>
+                            </>
+                        );
+                    })()}
+
+                </div>
+            </div>
+            
+            <Button onClick={resetFunnel} className="bg-blue-950 hover:bg-blue-900">
+                Iniciar um novo orçamento
+            </Button>
+        </section>
     );
     
     return (
