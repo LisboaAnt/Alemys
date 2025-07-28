@@ -1,4 +1,4 @@
-import { ServiceCategory, ServiceType } from './types';
+import { ServiceCategory, ServiceType, LeadData } from './types';
 
 // Função para obter o preço base com base na categoria e tipo de serviço
 export const getBasePrice = (category: ServiceCategory, serviceType: ServiceType): number => {
@@ -58,7 +58,7 @@ export const calculatePriceAdjustment = (
 };
 
 // Função para enviar dados do lead (placeholder para conexão com backend)
-export const submitLeadData = async (leadData: any): Promise<boolean> => {
+export const submitLeadData = async (leadData: LeadData): Promise<boolean> => {
     try {
         // TODO: Implementar conexão com backend
         console.log("Dados do lead para envio:", leadData);
