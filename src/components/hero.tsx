@@ -7,12 +7,11 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 import Autoplay from 'embla-carousel-autoplay'
-import { useRef, useState } from "react"
+import { useRef } from "react"
 import { useTranslations } from "next-intl"
 
 export default function Hero() {
     const t = useTranslations('hero');
-    const [api, setApi] = useState<unknown>()
     const autoplay = useRef(
         Autoplay({
             delay: 10000,
@@ -26,7 +25,6 @@ export default function Hero() {
             <div className="absolute -z-1 right-0 top-0 w-[30em] sm:w-1/1 h-full lg:w-[65em] lg:h-[30em] overflow-hidden">
                 <Carousel 
                     plugins={[autoplay.current]} 
-                    setApi={setApi}
                     opts={{ 
                         loop: true,
                         duration: 200,

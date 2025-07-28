@@ -4,8 +4,8 @@ import {
     FaStore, FaMobile, FaCog, FaUsers, FaDesktop, FaCalendarAlt, FaPlug,
     FaBug, FaPaintBrush, FaRocket, FaPlus, FaEdit, FaTabletAlt, FaLock,
     FaSync, FaExchangeAlt, FaServer, FaArrowUp, FaMobileAlt, FaBuilding,
-    FaChartLine, FaUserTie, FaLightbulb, FaGraduationCap, FaHandsHelping,
-    FaPalette, FaLayerGroup, FaUsersCog, FaCheck, FaClock
+    FaChartLine, FaUserTie, FaLightbulb, FaGraduationCap,
+    FaPalette, FaLayerGroup, FaUsersCog,  FaClock
 } from "react-icons/fa";
 
 // Função para obter ícone da categoria
