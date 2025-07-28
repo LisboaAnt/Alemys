@@ -12,12 +12,22 @@
     "language": "Idioma"
   },
   "contact": {
-    "leftSection": "Seção Esquerda",
-    "title": "Envie uma mensagem",
-    "description": "Envie uma mensagem para que possamos resolver seu problema.",
-    "email": "Informe seu email:",
-    "message": "Digite sua mensagem:",
-    "submit": "Enviar mensagem"
+    "sectionName": "Fale Conosco",
+    "left": {
+      "title": "Estamos sempre disponíveis para ajudar você!",
+      "description": "Entre em contato conosco por um dos canais abaixo, teremos prazer em atendê-lo e responderemos o mais rápido possível!",
+      "email": "Email:",
+      "address": "Endereço:",
+      "phone": "Telefone:"
+    },
+    "right": {
+      "title": "Envie uma mensagem",
+      "description": "Envie uma mensagem para que possamos resolver seu problema.",
+      "email": "Informe seu email:",
+      "message": "Digite sua mensagem:",
+      "textAreaPlaceholder": "Escreva sua mensagem aqui...",
+      "submit": "Enviar mensagem"
+    }
   },
   "services": {
     "title": "Nossos Serviços",

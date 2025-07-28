@@ -12,12 +12,22 @@
     "language": "Idioma"
   },
   "contact": {
-    "leftSection": "Sección Izquierda",
-    "title": "Envíe un Mensaje",
-    "description": "Envíenos un mensaje para que podamos resolver su problema.",
-    "email": "Ingrese su correo electrónico:",
-    "message": "Escriba su mensaje:",
-    "submit": "Enviar mensaje"
+    "sectionName": "Contáctanos",
+    "left": {
+      "title": "¡Estamos siempre disponibles para ayudarte!",
+      "description": "Ponte en contacto con nosotros a través de uno de los canales que encontrarás a continuación. Estaremos encantados de atenderte y te responderemos lo antes posible.",
+      "email": "Correo electrónico:",
+      "address": "Dirección:",
+      "phone": "Teléfono:"
+    },
+    "right": {
+      "title": "Envía un mensaje",
+      "description": "Envíanos un mensaje para que podamos ayudarte con tu problema.",
+      "email": "Introduce tu correo electrónico:",
+      "message": "Escribe tu mensaje:",
+      "textAreaPlaceholder": "Escribe tu mensaje aquí...",
+      "submit": "Enviar mensaje"
+    }
   },
   "services": {
     "title": "Nuestros Servicios",

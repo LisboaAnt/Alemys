@@ -1,54 +1,61 @@
-'use client'
-
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Textarea }  from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+
+import { PiHouseLineFill } from "react-icons/pi";
+import { IoMdMail } from "react-icons/io";
+import { FaPhoneVolume } from "react-icons/fa6";
+
 import { useTranslations } from "next-intl";
 
 export default function ContactCard() {
-    const t = useTranslations('contact');
-    
-    return(
-        <Card className="w-full max-w-2/3 bg-gray-50">
-            <CardHeader>
-                <CardTitle>{t('title')}</CardTitle>
-                <CardDescription>{t('description')}</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <form>
-                    <div className="flex flex-col gap-5">
-                        <div className="grid gap-2">
-                            <Label htmlFor="email">{t('email')}</Label>
-                            <Input
-                                className="bg-white"
-                                id="email"
-                                type="email"
-                                placeholder="example@example.com"
-                                required
-                            />
-                        </div>
-                        <div className="grid gap-2">
-                            <Label htmlFor="message">{t('message')}</Label>
-                            <Textarea className="bg-white" id="message" placeholder="Type your message here..." required/>
-                        </div>
-                    </div>
-                </form>
-            </CardContent>
-            <CardFooter>
-                <Button type="submit" className="w-full">
-                    {t('submit')}
-                </Button>
-            </CardFooter>
-        </Card>
-    )
+    const t = useTranslations('contact.left');
+
+  return (
+    <Card className="w-full md:max-w-2/3 sm:max-w-5/6 bg-transparent shadow-none">
+      <CardHeader>
+        <CardTitle className="text-2xl font-extrabold text-blue-950">
+          {t('title')}
+        </CardTitle>
+        <CardDescription className="text-base font-normal text-(--foreground)">
+          {t('description')}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-5">
+        <div className="w-full flex gap-5 items-center">
+            <Button className="bg-blue-950 hover:bg-blue-950">
+                <PiHouseLineFill/>
+            </Button>
+          <div>
+            <Label className="text-sm text-blue-950">{t('address')}</Label>
+            <p className="text-base text-foreground">Rua Fulan de Tal</p>
+          </div>
+        </div>
+        <div className="w-full flex gap-5 items-center">
+          <Button className="bg-blue-950 hover:bg-blue-950">
+            <IoMdMail className="w-5 h-5" />
+          </Button>
+          <div>
+            <Label className="text-sm text-blue-950">{t('email')}</Label>
+            <p className="text-base text-foreground">email@exemplo.com</p>
+          </div>
+        </div>
+        <div className="w-full flex gap-5 items-center">
+          <Button className="bg-blue-950 hover:bg-blue-950">
+            <FaPhoneVolume className="w-5 h-5" />
+          </Button>
+          <div>
+            <Label className="text-sm text-blue-950">{t('phone')}</Label>
+            <p className="text-base text-foreground">(00) 00000-0000</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  );
 }

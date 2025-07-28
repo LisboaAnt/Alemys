@@ -1,5 +1,5 @@
 'use client'
-
+import Link from "next/link"
 import { Button } from "./ui/button"
 import {
   Carousel,
@@ -22,7 +22,7 @@ export default function Hero() {
     )
 
     return (
-        <div className="flex min-h-[20em] lg:min-h-[30em] justify-center items-center bg-gradient-to-r from-blue-950 via-blue-950 to-blue-950/1 relative overflow-hidden">
+        <div className="flex min-h-[20em] lg:min-h-[30em] justify-center items-center bg-gradient-to-r from-gray-900 via-blue-950 to-gray-900/1 relative overflow-hidden">
             <div className="absolute -z-1 right-0 top-0 w-[30em] sm:w-1/1 h-full lg:w-[65em] lg:h-[30em] overflow-hidden">
                 <Carousel 
                     plugins={[autoplay.current]} 
@@ -56,11 +56,11 @@ export default function Hero() {
                     <h4 className="text-base md:text-lg text-(--background)">
                         {t('subtitle')}
                     </h4>
-                    <a href="#contact" className="w-full">
+                    <Link href="#contact" className="w-full">
                         <Button variant="default" size="lg" className="w-full">
                             {t('button')}
                         </Button>
-                    </a>
+                    </Link>
                 </div>
             </section>
         </div>

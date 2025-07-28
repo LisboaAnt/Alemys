@@ -6,6 +6,7 @@ import localFont from "next/font/local";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { locales } from "@/config";
+import Footer from "@/components/footer";
 
 const eastmanRoman = localFont({
   src: "../../../public/fonts/EastmanRomanTrial-Regular.otf",
@@ -55,6 +56,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages} locale={locale}>
           <NavigationMenuDemo />
           {children}
+          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>

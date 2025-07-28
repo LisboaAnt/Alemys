@@ -12,12 +12,22 @@
     "language": "Language"
   },
   "contact": {
-    "leftSection": "Left Section",
-    "title": "Send a Message",
-    "description": "Send us a message so we can solve your problem.",
-    "email": "Enter your email:",
-    "message": "Type your message:",
-    "submit": "Send message"
+    "sectionName": "Contact Us",
+    "left": {
+      "title": "We’re always here to help you!",
+      "description": "Get in touch with us through one of the channels below. We’ll be happy to assist you and will respond as quickly as possible.",
+      "email": "Email:",
+      "address": "Address:",
+      "phone": "Phone:"
+    },
+    "right": {
+      "title": "Send a message",
+      "description": "Send us a message so we can help you with your issue.",
+      "email": "Enter your email:",
+      "message": "Type your message:",
+      "textAreaPlaceholder": "Write your message here...",
+      "submit": "Send message"
+    }
   },
   "services": {
     "title": "Our Services",
