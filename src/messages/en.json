@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Solutions that go beyond code, beyond the obvious.",
+    "subtitle": "Transform ideas into results with technology, creativity and innovation.",
+    "button": "Contact us"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact Us",
+    "language": "Language"
+  },
+  "contact": {
+    "sectionName": "Contact Us",
+    "left": {
+      "title": "We’re always here to help you!",
+      "description": "Get in touch with us through one of the channels below. We’ll be happy to assist you and will respond as quickly as possible.",
+      "email": "Email:",
+      "address": "Address:",
+      "phone": "Phone:"
+    },
+    "right": {
+      "title": "Send a message",
+      "description": "Send us a message so we can help you with your issue.",
+      "email": "Enter your email:",
+      "message": "Type your message:",
+      "textAreaPlaceholder": "Write your message here...",
+      "submit": "Send message"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "service1": {
+      "title": "Web Development",
+      "description": "Modern and responsive websites",
+      "content": "We create custom web solutions that meet your business needs using the latest technologies."
+    },
+    "service2": {
+      "title": "Mobile Development",
+      "description": "Apps for iOS and Android",
+      "content": "Native and cross-platform mobile applications with intuitive interfaces and excellent performance."
+    },
+    "service3": {
+      "title": "Digital Transformation",
+      "description": "Modernize your business",
+      "content": "We help companies implement digital solutions that optimize processes and increase productivity."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Alémsys. All rights reserved.",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "contact": "Contact"
+  }
+}

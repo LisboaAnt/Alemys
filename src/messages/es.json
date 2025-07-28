@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Soluciones que van más allá del código, más allá de lo obvio.",
+    "subtitle": "Transforme ideas en resultados con tecnología, creatividad e innovación.",
+    "button": "Contáctenos"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "contact": {
+    "sectionName": "Contáctanos",
+    "left": {
+      "title": "¡Estamos siempre disponibles para ayudarte!",
+      "description": "Ponte en contacto con nosotros a través de uno de los canales que encontrarás a continuación. Estaremos encantados de atenderte y te responderemos lo antes posible.",
+      "email": "Correo electrónico:",
+      "address": "Dirección:",
+      "phone": "Teléfono:"
+    },
+    "right": {
+      "title": "Envía un mensaje",
+      "description": "Envíanos un mensaje para que podamos ayudarte con tu problema.",
+      "email": "Introduce tu correo electrónico:",
+      "message": "Escribe tu mensaje:",
+      "textAreaPlaceholder": "Escribe tu mensaje aquí...",
+      "submit": "Enviar mensaje"
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "service1": {
+      "title": "Desarrollo Web",
+      "description": "Sitios web modernos y responsivos",
+      "content": "Creamos soluciones web personalizadas que satisfacen las necesidades de su negocio utilizando las últimas tecnologías."
+    },
+    "service2": {
+      "title": "Desarrollo Móvil",
+      "description": "Aplicaciones para iOS y Android",
+      "content": "Aplicaciones móviles nativas y multiplataforma con interfaces intuitivas y excelente rendimiento."
+    },
+    "service3": {
+      "title": "Transformación Digital",
+      "description": "Moderniza tu negocio",
+      "content": "Ayudamos a las empresas a implementar soluciones digitales que optimizan procesos y aumentan la productividad."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Alémsys. Todos los derechos reservados.",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "contact": "Contacto"
+  }
+}

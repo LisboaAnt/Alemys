@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "title": "Lösungen, die über den Code hinausgehen, über das Offensichtliche hinaus.",
+    "subtitle": "Verwandeln Sie Ideen in Ergebnisse mit Technologie, Kreativität und Innovation.",
+    "button": "Kontaktieren Sie uns"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über Uns",
+    "services": "Dienstleistungen",
+    "contact": "Kontakt",
+    "language": "Sprache"
+  },
+  "contact": {
+    "sectionName": "Kontaktieren Sie uns",
+    "left": {
+      "title": "Wir sind immer für Sie da!",
+      "description": "Kontaktieren Sie uns über einen der untenstehenden Kanäle. Wir helfen Ihnen gerne weiter und antworten so schnell wie möglich.",
+      "email": "E-Mail:",
+      "address": "Adresse:",
+      "phone": "Telefon:"
+    },
+    "right": {
+      "title": "Nachricht senden",
+      "description": "Senden Sie uns eine Nachricht, damit wir Ihnen bei Ihrem Anliegen helfen können.",
+      "email": "Geben Sie Ihre E-Mail-Adresse ein:",
+      "message": "Geben Sie Ihre Nachricht ein:",
+      "textAreaPlaceholder": "Schreiben Sie hier Ihre Nachricht...",
+      "submit": "Nachricht senden"
+    }
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "service1": {
+      "title": "Webentwicklung",
+      "description": "Moderne und responsive Websites",
+      "content": "Wir erstellen maßgeschneiderte Weblösungen, die Ihren Geschäftsanforderungen entsprechen, unter Verwendung der neuesten Technologien."
+    },
+    "service2": {
+      "title": "Mobile Entwicklung",
+      "description": "Apps für iOS und Android",
+      "content": "Native und plattformübergreifende mobile Anwendungen mit intuitiven Benutzeroberflächen und hervorragender Leistung."
+    },
+    "service3": {
+      "title": "Digitale Transformation",
+      "description": "Modernisieren Sie Ihr Unternehmen",
+      "content": "Wir helfen Unternehmen bei der Implementierung digitaler Lösungen, die Prozesse optimieren und die Produktivität steigern."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Alémsys. Alle Rechte vorbehalten.",
+    "terms": "Bedingungen",
+    "privacy": "Datenschutz",
+    "contact": "Kontakt"
+  }
+}
