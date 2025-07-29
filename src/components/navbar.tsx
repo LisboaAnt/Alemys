@@ -17,21 +17,6 @@ export function NavigationMenuDemo() {
     const router = useRouter();
     const [showLanguageMenu, setShowLanguageMenu] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
-
-    // Verificar se é dispositivo móvel
-    useEffect(() => {
-        const checkIfMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        
-        checkIfMobile();
-        window.addEventListener('resize', checkIfMobile);
-        
-        return () => {
-            window.removeEventListener('resize', checkIfMobile);
-        };
-    }, []);
 
     // Função para trocar o idioma
     const handleLanguageChange = (locale: string) => {
@@ -52,7 +37,7 @@ export function NavigationMenuDemo() {
     };
 
     return (
-        <div id="inicio" className="flex justify-center bg-gradient-to-r from-blue-900 to-blue-950 p-5 w-full text-white">
+        <div id="inicio" className="flex -z-10 justify-center bg-gradient-to-r from-blue-900 to-blue-950 p-5 w-full text-white">
             <div className="w-full max-w-7xl justify-between flex flex-wrap">
                 <div className="flex justify-between w-full md:w-auto">
                     <Link href="/" className="flex gap-2 items-center justify-center h-10">
@@ -70,8 +55,8 @@ export function NavigationMenuDemo() {
                 </div>
 
                 {/* Menu de navegação - visível em desktop ou quando aberto em mobile */}
-                <div className={`${mobileMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-5 items-start md:items-center mt-4 md:mt-0`}>
-                    <Link href="/" onClick={handleLinkClick}>
+                <div className={`flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-5 items-start md:items-center md:mt-0 transition-all duration-300 ease-in-out md:h-auto md:max-h-full md:overflow-visible ${mobileMenuOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'}`}>
+                    <Link href="/" onClick={handleLinkClick} className="mt-2 md:mt-0">
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('home')}</Button>
                     </Link>
                     <Link href="/" onClick={handleLinkClick}>
@@ -115,5 +100,3 @@ export function NavigationMenuDemo() {
         </div>
     )
 }
-
-

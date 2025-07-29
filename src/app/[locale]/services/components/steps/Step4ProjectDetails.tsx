@@ -1,10 +1,11 @@
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { StepProps } from '../types';
 import { calculatePriceAdjustment } from '../utils';
+import BackButton from '../backButton';
 
 export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: StepProps) {
     const updateProjectDetails = (e: React.FormEvent<HTMLFormElement>) => {
@@ -33,59 +34,65 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
     };
 
     return (
-        <section className="w-full mx-auto px-4 py-8 max-w-6xl">
-            <Button variant="outline" onClick={() => setStep(3)} className="mb-6 bg-gray-100 hover:bg-gray-200">
-                ← Voltar
-            </Button>
+        <section className="w-full mx-auto px-4 pt-5 max-w-6xl">
+            <div className="my-5 w-full flex items-center gap-5">
+                <BackButton onClick={() => setStep(3)} />
+                <div className="flex-1 text-center">
+                    <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">
+                    Detalhes do projeto
+                    </h1>
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Forneça mais informações para ajustarmos seu orçamento:
+                    </p>
+                </div>
+            </div>
             
-            <h1 className="text-3xl font-bold mb-2 text-center">Detalhes do projeto</h1>
-            <p className="mb-8 text-gray-600 text-center">
-                Forneça mais informações para ajustarmos seu orçamento:
-            </p>
-            
-            <Card className="max-w-4xl mx-auto">
-                <CardContent className="p-6">
-                    <form onSubmit={updateProjectDetails} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <Label htmlFor="clientCount">Quantidade estimada de usuários/clientes</Label>
-                                <Input 
-                                    id="clientCount" 
-                                    name="clientCount" 
-                                    type="number" 
+            <Card className="w-full max-w-5/6 md:max-w-1/2 bg-gray-50 mx-auto">
+                <CardContent>
+                    <form onSubmit={updateProjectDetails}>
+                        <div className="flex flex-col gap-5">
+                            <div className="grid gap-2">
+                                <Label htmlFor="clientCount">Quantidade estimada de usuários/clientes:</Label>
+                                <Input
+                                    className="bg-white"
+                                    id="clientCount"
+                                    name="clientCount"
+                                    type="number"
                                     placeholder="Ex: 500"
                                     defaultValue={leadData.clientCount || ""}
                                 />
                             </div>
-                            
-                            <div>
-                                <Label htmlFor="productCount">Quantidade de produtos/itens (se aplicável)</Label>
-                                <Input 
-                                    id="productCount" 
-                                    name="productCount" 
-                                    type="number" 
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="productCount">Quantidade de produtos/itens (se aplicável):</Label>
+                                <Input
+                                    className="bg-white"
+                                    id="productCount"
+                                    name="productCount"
+                                    type="number"
                                     placeholder="Ex: 50"
                                     defaultValue={leadData.productCount || ""}
                                 />
                             </div>
-                            
-                            <div>
-                                <Label htmlFor="pageCount">Quantidade estimada de páginas/telas</Label>
-                                <Input 
-                                    id="pageCount" 
-                                    name="pageCount" 
-                                    type="number" 
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="pageCount">Quantidade estimada de páginas/telas:</Label>
+                                <Input
+                                    className="bg-white"
+                                    id="pageCount"
+                                    name="pageCount"
+                                    type="number"
                                     placeholder="Ex: 10"
                                     defaultValue={leadData.pageCount || ""}
                                 />
                             </div>
-                            
-                            <div>
-                                <Label htmlFor="companySize">Tamanho da sua empresa</Label>
-                                <select 
-                                    id="companySize" 
-                                    name="companySize" 
-                                    className="w-full p-2 border rounded-md"
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="companySize">Tamanho da sua empresa:</Label>
+                                <select
+                                    id="companySize"
+                                    name="companySize"
+                                    className="w-full p-2 bg-white border rounded-md"
                                     defaultValue={leadData.companySize || ""}
                                 >
                                     <option value="">Selecione...</option>
@@ -95,8 +102,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                                 </select>
                             </div>
                         </div>
-                        
-                        <Button type="submit" className="w-full">
+                        <Button type="submit" className="mt-5 w-full">
                             Continuar
                         </Button>
                     </form>
