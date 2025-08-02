@@ -45,6 +45,210 @@
       "title": "Transformación Digital",
       "description": "Moderniza tu negocio",
       "content": "Ayudamos a las empresas a implementar soluciones digitales que optimizan procesos y aumentan la productividad."
+    },
+    "steps": {
+      "step1": {
+        "title": "¿Qué estás buscando?",
+        "description": "Ofrecemos una amplia gama de servicios para satisfacer tus necesidades. Selecciona la opción que mejor describa lo que estás buscando.",
+        "categories": {
+          "new": {
+            "title": "Crear algo nuevo",
+            "content": "Quiero desarrollar algo desde cero"
+          },
+          "maintenance": {
+            "title": "Mantenimiento o expansión",
+            "content": "Ya tengo algo listo y quiero mejorarlo o corregirlo"
+          },
+          "mentoring": {
+            "title": "Mentoría o consultoría",
+            "content": "Necesito orientación o quiero entrenar a mi equipo"
+          }
+        }
+      },
+      "step2": {
+        "description": "Selecciona el servicio específico que estás buscando:",
+        "categories": {
+          "new": "Crear algo nuevo",
+          "maintenance": "Mantenimiento o expansión",
+          "mentoring": "Mentoría o consultoría"
+        },
+        "services": {
+          "new": {
+            "landingPage": "Landing Page de Campaña",
+            "ecommerce": "Tienda Virtual (E-commerce)",
+            "blog": "Blog o Portal de Contenido",
+            "marketplace": "Marketplace",
+            "mobileApp": "Aplicación Móvil",
+            "customSystem": "Sistema Web Personalizado",
+            "subscription": "Plataforma de Suscripción",
+            "pwa": "Progressive Web App (PWA)",
+            "events": "Sitio para Eventos",
+            "apiIntegration": "Integraciones con APIs"
+          },
+          "maintenance": {
+            "bugFix": "Corrección de errores",
+            "visualUpdate": "Actualización visual",
+            "performance": "Optimización de rendimiento",
+            "newFeatures": "Adición de funcionalidades",
+            "contentMaintenance": "Mantenimiento de contenido",
+            "responsive": "Diseño responsivo",
+            "security": "Backup y seguridad",
+            "pluginUpdate": "Actualización de plugins",
+            "serviceIntegration": "Integración con nuevos servicios",
+            "hosting": "Migración a nuevo hosting",
+            "transformation": "Transformación de sitio antiguo",
+            "appEvolution": "Evolución a aplicación"
+          },
+          "mentoring": {
+            "architecture": "Consultoría en Arquitectura",
+            "planning": "Planificación técnica",
+            "codeReview": "Evaluación de código",
+            "training": "Entrenamientos en tecnologías",
+            "teamMentoring": "Mentoría para equipos",
+            "uxWorkshops": "Talleres de UX/UI",
+            "stackSupport": "Apoyo en elección de stack",
+            "productOwner": "Mentoría para Product Owners"
+          }
+        }
+      },
+      "step3": {
+        "title": "¿Cuál es el tamaño del proyecto?",
+        "description": "Elige el tamaño que mejor represente tu proyecto:",
+        "sizes": {
+          "small": {
+            "title": "Proyecto Pequeño",
+            "content": "Proyectos simples con pocos recursos"
+          },
+          "medium": {
+            "title": "Proyecto Mediano",
+            "content": "Proyectos con complejidad moderada"
+          },
+          "large": {
+            "title": "Proyecto Grande",
+            "content": "Proyectos complejos con muchos recursos"
+          }
+        }
+      },
+      "step4": {
+        "new": {
+          "title": "Detalles del nuevo proyecto",
+          "description": "Proporciona información sobre el proyecto que quieres crear:",
+          "fields": {
+            "clientCount": "Cantidad estimada de usuarios/clientes:",
+            "clientCountPlaceholder": "Ej: 500",
+            "productCount": "Cantidad de productos/artículos (si aplica):",
+            "productCountPlaceholder": "Ej: 50",
+            "pageCount": "Cantidad estimada de páginas/pantallas:",
+            "pageCountPlaceholder": "Ej: 10",
+            "companySize": "Tamaño de tu empresa:",
+            "companySizeOptions": {
+              "select": "Selecciona...",
+              "small": "Pequeña (hasta 20 empleados)",
+              "medium": "Mediana (21-100 empleados)",
+              "large": "Grande (más de 100 empleados)"
+            }
+          }
+        },
+        "maintenance": {
+          "title": "Detalles del mantenimiento",
+          "description": "Cuéntanos sobre el proyecto existente y qué necesita ser hecho:",
+          "fields": {
+            "currentComplexity": "Complejidad del proyecto actual:",
+            "currentComplexityOptions": {
+              "select": "Selecciona...",
+              "low": "Baja - Sitio simple o básico",
+              "medium": "Media - Sistema con varias funcionalidades",
+              "high": "Alta - Sistema complejo o personalizado"
+            },
+            "affectedFunctionalities": "Cuántas funcionalidades serán afectadas:",
+            "affectedFunctionalitiesPlaceholder": "Ej: 3",
+            "urgencyLevel": "Nivel de urgencia:",
+            "urgencyLevelOptions": {
+              "select": "Selecciona...",
+              "low": "Baja - Puedo esperar algunas semanas",
+              "medium": "Media - Lo necesito en 1-2 semanas",
+              "high": "Alta - Urgente, lo necesito lo antes posible"
+            },
+            "hasDocumentation": "El proyecto tiene documentación:",
+            "hasDocumentationOptions": {
+              "select": "Selecciona...",
+              "yes": "Sí - Tiene documentación completa",
+              "partial": "Parcial - Documentación básica",
+              "no": "No - Sin documentación"
+            }
+          }
+        },
+        "mentoring": {
+          "title": "Detalles de la mentoría",
+          "description": "Proporciona información sobre tu equipo y necesidades de mentoría:",
+          "fields": {
+            "teamSize": "Tamaño del equipo que recibirá mentoría:",
+            "teamSizePlaceholder": "Ej: 5",
+            "experienceLevel": "Nivel de experiencia del equipo:",
+            "experienceLevelOptions": {
+              "select": "Selecciona...",
+              "beginner": "Principiante - Poca experiencia",
+              "intermediate": "Intermedio - Experiencia moderada",
+              "advanced": "Avanzado - Mucha experiencia"
+            },
+            "sessionDuration": "Duración esperada de la mentoría:",
+            "sessionDurationOptions": {
+              "select": "Selecciona...",
+              "short": "Corta - Hasta 1 mes",
+              "medium": "Media - 1-3 meses",
+              "long": "Larga - Más de 3 meses"
+            },
+            "mentorshipType": "Tipo de mentoría deseada:",
+            "mentorshipTypeOptions": {
+              "select": "Selecciona...",
+              "group": "En grupo - Sesiones colectivas",
+              "individual": "Individual - Sesiones 1:1",
+              "custom": "Personalizada - Programa específico"
+            }
+          }
+        },
+        "continueButton": "Continuar"
+      },
+      "step5": {
+        "title": "¡Casi listo!",
+        "description": "Basado en tus elecciones, el presupuesto estimado para tu proyecto es:",
+        "priceRange": "Varía entre: ${lowerBound} y ${upperBound}",
+        "disclaimer": "*Este es solo un valor estimado. El presupuesto final puede variar después del análisis detallado.",
+        "contact": {
+          "title": "Tus datos de contacto",
+          "description": "Completa tus datos para que podamos contactarte y discutir tu proyecto en detalle.",
+          "fields": {
+            "name": "Nombre completo:",
+            "namePlaceholder": "Tu nombre",
+            "email": "Correo electrónico:",
+            "emailPlaceholder": "tu@email.com",
+            "phone": "Teléfono/WhatsApp",
+            "phonePlaceholder": "(00) 00000-0000",
+            "message": "Mensaje adicional (opcional):",
+            "messagePlaceholder": "Detalles adicionales sobre tu proyecto..."
+          },
+          "submitButton": "Solicitar presupuesto"
+        }
+      },
+      "step6": {
+        "title": "¡Gracias por tu interés!",
+        "description": "Hemos recibido tu información y te contactaremos pronto para discutir tu proyecto.",
+        "summary": {
+          "title": "Resumen de tu proyecto",
+          "serviceType": "Tipo de servicio:",
+          "projectSize": "Tamaño del proyecto:",
+          "estimatedBudget": "Presupuesto estimado:",
+          "projectSizes": {
+            "small": "Pequeño",
+            "medium": "Mediano",
+            "large": "Grande"
+          },
+          "priceRange": "${lowerBound} a ${upperBound}"
+        },
+        "newQuoteButton": "Nuevo presupuesto"
+      },
+      "backButton": "Volver",
+      "disabledServices": "(Disponible pronto)"
     }
   },
   "footer": {

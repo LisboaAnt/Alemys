@@ -6,8 +6,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { StepProps } from '../types';
 import { submitLeadData } from '../utils';
+import BackButton from '../backButton';
+import { useTranslations } from 'next-intl';
 
 export default function Step5ContactForm({ leadData, setLeadData, setStep }: StepProps) {
+    const t = useTranslations('services.steps.step5');
     const handleSubmitContact = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -33,16 +36,20 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
         }
     };
 
-    return (
-        <section className="w-full mx-auto px-4 py-8 max-w-6xl">
-            <Button variant="outline" onClick={() => setStep(4)} className="mb-6 bg-gray-100 hover:bg-gray-200">
-                ← Voltar
-            </Button>
-            
-            <h1 className="text-3xl font-bold mb-2 text-center">Quase lá!</h1>
-            <p className="mb-2 text-gray-600 text-center">
-                Baseado nas suas escolhas, o orçamento estimado para o seu projeto é:
-            </p>
+        return (
+        <section className="w-full mx-auto px-4 py-5 max-w-6xl">
+            <div className="my-5 w-full flex items-center gap-5">
+                <BackButton onClick={() => setStep(4)} />
+                <div className="flex-1 text-center">
+                    <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">
+                        {t('title')}
+                    </h1>
+                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                        {t('description')}
+                    </p>
+                </div>
+            </div>
+
             <p className="text-3xl font-bold text-blue-600 mb-6 text-center">
                 {(() => {
                     const price = leadData.estimatedPrice ?? 0;
@@ -51,72 +58,80 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
 
                     return (
                         <>
-                        <p>Varia entre: R$ {lowerBound.toLocaleString('pt-BR')} e R$ {upperBound.toLocaleString('pt-BR')}</p>
+                        <p>{t('priceRange', { 
+                            lowerBound: lowerBound.toLocaleString('pt-BR'), 
+                            upperBound: upperBound.toLocaleString('pt-BR') 
+                        })}</p>
                         </>
                     );
                 })()}
             </p>
-            <p className="text-sm text-gray-500 mb-8 text-center">
-                *Este é apenas um valor estimado. O orçamento final pode variar após análise detalhada.
+            <p className="text-md text-gray-600 mb-8 text-center">
+                {t('disclaimer')}
             </p>
             
-            <Card className="max-w-4xl mx-auto">
+            <Card className="w-full max-w-5/6 md:max-w-4/6 bg-gray-50 mx-auto">
                 <CardHeader>
-                    <CardTitle>Seus dados para contato</CardTitle>
+                    <CardTitle>{t('contact.title')}</CardTitle>
                     <CardDescription>
-                        Preencha seus dados para que possamos entrar em contato e discutir seu projeto em detalhes.
+                        {t('contact.description')}
                     </CardDescription>
                 </CardHeader>
+
                 <CardContent>
-                    <form onSubmit={handleSubmitContact} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <Label htmlFor="name">Nome completo</Label>
-                                <Input 
-                                    id="name" 
-                                    name="name" 
-                                    required 
-                                    placeholder="Seu nome"
-                                    defaultValue={leadData.name || ""}
-                                />
-                            </div>
-                            
-                            <div>
-                                <Label htmlFor="email">E-mail</Label>
-                                <Input 
-                                    id="email" 
-                                    name="email" 
-                                    type="email" 
-                                    required 
-                                    placeholder="seu@email.com"
-                                    defaultValue={leadData.email || ""}
-                                />
-                            </div>
-                            
-                            <div>
-                                <Label htmlFor="phone">Telefone/WhatsApp</Label>
-                                <Input 
-                                    id="phone" 
-                                    name="phone" 
-                                    placeholder="(00) 00000-0000"
-                                    defaultValue={leadData.phone || ""}
-                                />
-                            </div>
-                            
-                            <div className="md:col-span-2">
-                                <Label htmlFor="message">Mensagem adicional (opcional)</Label>
-                                <Textarea 
-                                    id="message" 
-                                    name="message" 
-                                    placeholder="Detalhes adicionais sobre seu projeto..."
-                                    defaultValue={leadData.message || ""}
-                                />
-                            </div>
+                    <form onSubmit={handleSubmitContact}>
+                    <div className="flex flex-col gap-5">
+                        <div className="grid gap-2">
+                        <Label htmlFor="name">{t('contact.fields.name')}</Label>
+                        <Input
+                            className="bg-white"
+                            id="name"
+                            name="name"
+                            required
+                            placeholder={t('contact.fields.namePlaceholder')}
+                            defaultValue={leadData.name || ""}
+                        />
                         </div>
-                        
-                        <Button type="submit" className="w-full">
-                            Enviar e solicitar orçamento
-                        </Button>
+
+                        <div className="grid gap-2">
+                        <Label htmlFor="email">{t('contact.fields.email')}</Label>
+                        <Input
+                            className="bg-white"
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                            placeholder={t('contact.fields.emailPlaceholder')}
+                            defaultValue={leadData.email || ""}
+                        />
+                        </div>
+
+                        <div className="grid gap-2">
+                        <Label htmlFor="phone">{t('contact.fields.phone')}</Label>
+                        <Input
+                            className="bg-white"
+                            id="phone"
+                            name="phone"
+                            placeholder={t('contact.fields.phonePlaceholder')}
+                            defaultValue={leadData.phone || ""}
+                        />
+                        </div>
+
+                        <div className="grid gap-2">
+                        <Label htmlFor="message">{t('contact.fields.message')}</Label>
+                        <Textarea
+                            className="bg-white"
+                            id="message"
+                            name="message"
+                            placeholder={t('contact.fields.messagePlaceholder')}
+                            defaultValue={leadData.message || ""}
+                        />
+                        </div>
+                    </div>
+
+                    <Button type="submit" className="mt-5 w-full bg-blue-900 text-white hover:bg-blue-950">
+                        {t('contact.submitButton')}
+                    </Button>
                     </form>
                 </CardContent>
             </Card>

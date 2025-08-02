@@ -1,72 +1,66 @@
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { StepProps, ProjectSize } from '../types';
 import { getProjectSizeIcon } from '../icons';
 import { getBasePrice } from '../utils';
+import FunnelCard from '../funnelCard';
+import BackButton from '../backButton';
+import { useTranslations } from 'next-intl';
 
 export default function Step3ProjectSizeSelection({ leadData, setLeadData, setStep }: StepProps) {
-    const selectProjectSize = (size: ProjectSize) => {
-        const basePrice = getBasePrice(leadData.category, leadData.serviceType);
-        let multiplier = 1;
-        
-        switch(size) {
-            case "small": multiplier = 1; break;
-            case "medium": multiplier = 1.5; break;
-            case "large": multiplier = 2.5; break;
-        }
-        
-        setLeadData({ 
-            ...leadData, 
-            projectSize: size,
-            estimatedPrice: basePrice * multiplier
-        });
-        
-        setStep(4);
-    };
+  const t = useTranslations('services.steps.step3');
+  const selectProjectSize = (size: ProjectSize) => {
+    const basePrice = getBasePrice(leadData.category, leadData.serviceType);
+    let multiplier = 1;
 
-    return (
-        <section className="w-full mx-auto w-full mx-auto px-4 py-8 max-w-6xl">
-            <Button variant="outline" onClick={() => setStep(2)} className="mb-6 bg-gray-100 hover:bg-gray-200">
-                ← Voltar
-            </Button>
-            
-            <h1 className="text-3xl font-bold mb-2 text-center">Qual o tamanho do seu projeto?</h1>
-            <p className="mb-8 text-gray-600 text-center">
-                Selecione a opção que melhor descreve a escala do seu projeto:
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
-                <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => selectProjectSize("small")}>
-                    <CardHeader className="text-center">
-                        {getProjectSizeIcon("small")}
-                        <CardTitle>Pequeno</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                        <p>Projeto simples, poucos recursos, prazo curto</p>
-                    </CardContent>
-                </Card>
+    switch (size) {
+      case "small": multiplier = 1; break;
+      case "medium": multiplier = 1.5; break;
+      case "large": multiplier = 2.5; break;
+    }
 
-                <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => selectProjectSize("medium")}>
-                    <CardHeader className="text-center">
-                        {getProjectSizeIcon("medium")}
-                        <CardTitle>Médio</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                        <p>Projeto intermediário, vários recursos, prazo médio</p>
-                    </CardContent>
-                </Card>
+    setLeadData({
+      ...leadData,
+      projectSize: size,
+      estimatedPrice: basePrice * multiplier
+    });
 
-                <Card className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" onClick={() => selectProjectSize("large")}>
-                    <CardHeader className="text-center">
-                        {getProjectSizeIcon("large")}
-                        <CardTitle>Grande</CardTitle>
-                    </CardHeader>
-                    <CardContent className="text-center">
-                        <p>Projeto complexo, muitos recursos, prazo extenso</p>
-                    </CardContent>
-                </Card>
+    setStep(4);
+  };
+
+  return (
+    <section className="w-full mx-auto px-4 pt-5 max-w-6xl relative">
+        <div className="my-5 w-full flex items-center gap-5">
+            <BackButton onClick={() => setStep(2)} />
+            <div className="flex-1 text-center">
+                <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">
+                  {t('title')}
+                </h1>
+                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                  {t('description')}
+                </p>
             </div>
-        </section>
-    );
-} 
+        </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <FunnelCard
+          title={t('sizes.small.title')}
+          content={t('sizes.small.content')}
+          icon={getProjectSizeIcon("small")}
+          onClick={() => selectProjectSize("small")}
+        />
+        <FunnelCard
+          title={t('sizes.medium.title')}
+          content={t('sizes.medium.content')}
+          icon={getProjectSizeIcon("medium")}
+          onClick={() => selectProjectSize("medium")}
+        />
+        <FunnelCard
+          title={t('sizes.large.title')}
+          content={t('sizes.large.content')}
+          icon={getProjectSizeIcon("large")}
+          onClick={() => selectProjectSize("large")}
+        />
+      </div>
+    </section>
+  );
+}

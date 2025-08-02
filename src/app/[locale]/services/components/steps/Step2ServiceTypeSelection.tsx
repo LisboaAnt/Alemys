@@ -1,91 +1,128 @@
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { StepProps } from '../types';
 import { getServiceIcon } from '../icons';
+import FunnelCard from '../funnelCard';
+import BackButton from '../backButton';
+import { useTranslations } from 'next-intl';
+
+// Mapeamento dos serviços para as chaves de tradução
+const SERVICE_MAPPINGS = {
+  new: {
+    'Landing Page de Campanha': 'landingPage',
+    'Loja Virtual (E-commerce)': 'ecommerce',
+    'Blog ou Portal de Conteúdo': 'blog',
+    'Marketplace': 'marketplace',
+    'Aplicativo Mobile': 'mobileApp',
+    'Sistema Web Personalizado': 'customSystem',
+    'Plataforma com Assinatura': 'subscription',
+    'Progressive Web App (PWA)': 'pwa',
+    'Site para Eventos': 'events',
+    'Integrações com APIs': 'apiIntegration'
+  },
+  maintenance: {
+    'Correção de bugs': 'bugFix',
+    'Atualização visual': 'visualUpdate',
+    'Otimização de performance': 'performance',
+    'Adição de funcionalidades': 'newFeatures',
+    'Manutenção de conteúdo': 'contentMaintenance',
+    'Responsividade': 'responsive',
+    'Backup e segurança': 'security',
+    'Atualização de plugins': 'pluginUpdate',
+    'Integração com novos serviços': 'serviceIntegration',
+    'Migração para nova hospedagem': 'hosting',
+    'Transformação de site antigo': 'transformation',
+    'Evolução para aplicativo': 'appEvolution'
+  },
+  mentoring: {
+    'Consultoria em Arquitetura': 'architecture',
+    'Planejamento técnico': 'planning',
+    'Avaliação de código': 'codeReview',
+    'Treinamentos em tecnologias': 'training',
+    'Mentoria para times': 'teamMentoring',
+    'Workshops de UX/UI': 'uxWorkshops',
+    'Apoio na escolha de stack': 'stackSupport',
+    'Mentoria para Product Owners': 'productOwner'
+  }
+};
+
+// Configuração fácil: adicione aqui os serviços que devem ficar desabilitados
+const DISABLED_SERVICES: string[] = [
+  // Exemplos - descomente ou adicione os serviços que quiser desabilitar:
+  "Marketplace",
+  "Plataforma com Assinatura",
+  "Mentoria para Product Owners",
+  "Treinamentos em tecnologias",
+  "Mentoria para times",
+  "Workshops de UX/UI",
+  "Apoio na escolha de stack"
+
+];
 
 export default function Step2ServiceTypeSelection({ leadData, setLeadData, setStep }: StepProps) {
-    const selectServiceType = (serviceType: string) => {
-        setLeadData({ ...leadData, serviceType });
-        setStep(3);
-    };
+  const t = useTranslations('services.steps.step2');
+  
+  const selectServiceType = (serviceType: string) => {
+    setLeadData({ ...leadData, serviceType });
+    setStep(3);
+  };
 
-    let services: string[] = [];
-    let title = "";
-    
+  const getServicesForCategory = () => {
     switch (leadData.category) {
-        case "new":
-            title = "Criar algo novo";
-            services = [
-                "Landing Page de Campanha",
-                "Loja Virtual (E-commerce)",
-                "Blog ou Portal de Conteúdo",
-                "Marketplace",
-                "Aplicativo Mobile",
-                "Sistema Web Personalizado",
-                "Plataforma com Assinatura",
-                "Progressive Web App (PWA)",
-                "Site para Eventos",
-                "Integrações com APIs"
-            ];
-            break;
-        case "maintenance":
-            title = "Manutenção ou expansão";
-            services = [
-                "Correção de bugs",
-                "Atualização visual",
-                "Otimização de performance",
-                "Adição de funcionalidades",
-                "Manutenção de conteúdo",
-                "Responsividade",
-                "Backup e segurança",
-                "Atualização de plugins",
-                "Integração com novos serviços",
-                "Migração para nova hospedagem",
-                "Transformação de site antigo",
-                "Evolução para aplicativo"
-            ];
-            break;
-        case "mentoring":
-            title = "Mentoria ou consultoria";
-            services = [
-                "Consultoria em Arquitetura",
-                "Planejamento técnico",
-                "Avaliação de código",
-                "Treinamentos em tecnologias",
-                "Mentoria para times",
-                "Workshops de UX/UI",
-                "Apoio na escolha de stack",
-                "Mentoria para Product Owners"
-            ];
-            break;
+      case "new":
+        return Object.keys(SERVICE_MAPPINGS.new);
+      case "maintenance":
+        return Object.keys(SERVICE_MAPPINGS.maintenance);
+      case "mentoring":
+        return Object.keys(SERVICE_MAPPINGS.mentoring);
+      default:
+        return [];
     }
+  };
+
+  const getTranslatedService = (service: string) => {
+    if (!leadData.category) return service;
     
-    return (
-        <section className="w-full mx-auto px-4 py-8 max-w-6xl">
-            <Button variant="outline" onClick={() => setStep(1)} className="mb-6 bg-gray-100 hover:bg-gray-200">
-                ← Voltar
-            </Button>
-            
-            <h1 className="text-3xl font-bold mb-2 text-center">{title}</h1>
-            <p className="mb-8 text-gray-600 text-center">
-                Selecione o serviço específico que você está buscando:
-            </p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {services.map((service) => (
-                    <Card 
-                        key={service}
-                        className="hover:shadow-lg transition-all cursor-pointer hover:scale-105" 
-                        onClick={() => selectServiceType(service)}
-                    >
-                        <CardContent className="p-6 text-center">
-                            {getServiceIcon(service)}
-                            <p className="font-medium">{service}</p>
-                        </CardContent>
-                    </Card>
-                ))}
+    const mapping = SERVICE_MAPPINGS[leadData.category as keyof typeof SERVICE_MAPPINGS];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const key = (mapping as any)[service];
+    
+    if (key) {
+      return t(`services.${leadData.category}.${key}`);
+    }
+    return service;
+  };
+
+  const services = getServicesForCategory();
+  const title = leadData.category ? t(`categories.${leadData.category}`) : "";
+
+  return (
+    <section className="w-full  mx-auto px-4 md:pt-5 max-w-6xl relative">
+        <div className="md:my-5 mb-5 w-full md:flex items-center gap-5">
+            <BackButton onClick={() => setStep(1)} />
+            <div className="flex-1 text-center">
+                <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">{title}</h1>
+                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                  {t('description')}
+                </p>
             </div>
-        </section>
-    );
-} 
+        </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {services.map((service) => {
+          const isDisabled = DISABLED_SERVICES.includes(service);
+          const translatedService = getTranslatedService(service);
+          return (
+            <FunnelCard
+              key={service}
+              title={translatedService}
+              content=""
+              icon={getServiceIcon(service)}
+              onClick={() => selectServiceType(service)}
+              disabled={isDisabled}
+            />
+          );
+        })}
+      </div>
+    </section>
+  );
+}

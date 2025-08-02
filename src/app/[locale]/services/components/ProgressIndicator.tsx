@@ -21,7 +21,7 @@ export default function ProgressIndicator({ currentStep }: ProgressIndicatorProp
                 {steps.map((stepItem, index) => (
                     <div key={stepItem.number} className="flex items-center">
                         <div className="flex flex-col items-center">
-                            <div className={`w-10 mx-2 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
+                            <div className={`w-8 md:w-10 h-8 md:h-10 mx-2 rounded-full flex items-center justify-center text-sm font-medium transition-all ${
                                 stepItem.completed 
                                     ? 'bg-blue-900 text-white' 
                                     : currentStep === stepItem.number 
