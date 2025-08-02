@@ -1,12 +1,13 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
 import { StepProps, ProjectSize } from '../types';
 import { getProjectSizeIcon } from '../icons';
 import { getBasePrice } from '../utils';
 import FunnelCard from '../funnelCard';
 import BackButton from '../backButton';
+import { useTranslations } from 'next-intl';
 
 export default function Step3ProjectSizeSelection({ leadData, setLeadData, setStep }: StepProps) {
+  const t = useTranslations('services.steps.step3');
   const selectProjectSize = (size: ProjectSize) => {
     const basePrice = getBasePrice(leadData.category, leadData.serviceType);
     let multiplier = 1;
@@ -32,30 +33,30 @@ export default function Step3ProjectSizeSelection({ leadData, setLeadData, setSt
             <BackButton onClick={() => setStep(2)} />
             <div className="flex-1 text-center">
                 <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">
-                Qual o tamanho do seu projeto?
+                  {t('title')}
                 </h1>
                 <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                Selecione a opção que melhor descreve a escala do seu projeto:
+                  {t('description')}
                 </p>
             </div>
         </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <FunnelCard
-          title="Pequeno"
-          content="Projeto simples, poucos recursos, prazo curto"
+          title={t('sizes.small.title')}
+          content={t('sizes.small.content')}
           icon={getProjectSizeIcon("small")}
           onClick={() => selectProjectSize("small")}
         />
         <FunnelCard
-          title="Médio"
-          content="Projeto intermediário, vários recursos, prazo médio"
+          title={t('sizes.medium.title')}
+          content={t('sizes.medium.content')}
           icon={getProjectSizeIcon("medium")}
           onClick={() => selectProjectSize("medium")}
         />
         <FunnelCard
-          title="Grande"
-          content="Projeto complexo, muitos recursos, prazo extenso"
+          title={t('sizes.large.title')}
+          content={t('sizes.large.content')}
           icon={getProjectSizeIcon("large")}
           onClick={() => selectProjectSize("large")}
         />

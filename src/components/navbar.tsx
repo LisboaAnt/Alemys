@@ -55,7 +55,7 @@ export function NavigationMenuDemo() {
                 </div>
 
                 {/* Menu de navegação - visível em desktop ou quando aberto em mobile */}
-                <div className={`flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-5 items-start md:items-center md:mt-0 transition-all duration-300 ease-in-out md:h-auto md:max-h-full md:overflow-visible ${mobileMenuOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'}`}>
+                <div className={`flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-5 items-start md:items-center md:mt-0 transition-all duration-500 ease-in-out md:h-auto md:max-h-full md:overflow-visible ${mobileMenuOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'}`}>
                     <Link href="/" onClick={handleLinkClick} className="mt-2 md:mt-0">
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('home')}</Button>
                     </Link>
@@ -68,7 +68,7 @@ export function NavigationMenuDemo() {
                     <Link href="/#contact" onClick={handleLinkClick}>
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('contact')}</Button>
                     </Link>
-                    <div className="relative text-(--foreground) w-full md:w-auto">
+                    <div className={`relative text-(--foreground) w-full md:w-auto `}>
                         <Button 
                             className="w-full bg-accent md:w-auto text-(--foreground)"
                             variant="outline" 

@@ -3,8 +3,10 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/componen
 import { Button } from "@/components/ui/button";
 import { StepProps } from '../types';
 import { Label } from '@/components/ui/label';
+import { useTranslations } from 'next-intl';
 
 export default function Step6ThankYou({ leadData, setLeadData, setStep }: StepProps) {
+    const t = useTranslations('services.steps.step6');
     const resetFunnel = () => {
         localStorage.removeItem('serviceLeadData');
         setLeadData({
@@ -20,33 +22,33 @@ export default function Step6ThankYou({ leadData, setLeadData, setStep }: StepPr
             <div className="my-5 w-full flex items-center gap-5">
                 <div className="flex-1 text-center">
                     <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">
-                        Obrigado pelo seu interesse!
+                        {t('title')}
                     </h1>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                        Recebemos suas informações e entraremos em contato em breve para discutir seu projeto.
+                        {t('description')}
                     </p>
                 </div>
             </div>
             
             <Card className="bg-gray-50 max-w-lg mx-auto">
                 <CardHeader className='w-full text-center'>
-                    <CardTitle>Resumo do seu projeto</CardTitle>
+                    <CardTitle>{t('summary.title')}</CardTitle>
                 </CardHeader>
 
                 <CardContent className="w-full flex flex-col gap-5">
                     <div className='flex flex-col gap-2'>
-                        <Label>Tipo de serviço:</Label>
+                        <Label>{t('summary.serviceType')}</Label>
                         <p>{leadData.serviceType}</p>
                     </div>
                     <div className='flex flex-col gap-2'>
-                        <Label>Tamanho do projeto:</Label>
+                        <Label>{t('summary.projectSize')}</Label>
                         <p className='text-md text-gray-800'>
                             {" "}
                             {leadData.projectSize === "small"
-                            ? "Pequeno"
+                            ? t('summary.projectSizes.small')
                             : leadData.projectSize === "medium"
-                            ? "Médio"
-                            : "Grande"}
+                            ? t('summary.projectSizes.medium')
+                            : t('summary.projectSizes.large')}
                         </p>
                     </div>
                     {(() => {
@@ -56,11 +58,12 @@ export default function Step6ThankYou({ leadData, setLeadData, setStep }: StepPr
 
                         return (
                         <div className='flex flex-col gap-2'>
-                            <Label>Orçamento estimado:</Label>
+                            <Label>{t('summary.estimatedBudget')}</Label>
                             <p className='text-md text-gray-800'>
-                                R${" "}
-                                {lowerBound.toLocaleString("pt-BR")} à R${" "}
-                                {upperBound.toLocaleString("pt-BR")}
+                                {t('summary.priceRange', {
+                                    lowerBound: lowerBound.toLocaleString("pt-BR"),
+                                    upperBound: upperBound.toLocaleString("pt-BR")
+                                })}
                             </p>
                         </div>
                         );
@@ -69,7 +72,7 @@ export default function Step6ThankYou({ leadData, setLeadData, setStep }: StepPr
 
                 <CardFooter>
                     <Button onClick={resetFunnel} className="w-full">
-                        Novo orçamento
+                        {t('newQuoteButton')}
                     </Button>
                 </CardFooter>
             </Card>

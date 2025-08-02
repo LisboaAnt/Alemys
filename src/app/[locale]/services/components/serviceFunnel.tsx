@@ -65,7 +65,7 @@ export default function ServiceFunnel() {
     
     return (
         <div className="w-full max-w-7xl mx-auto">
-            <div className="flex justify-center my-5">
+            <div className="flex justify-center my-2 md:my-5">
                 <div className="lg:absolute">
                     <ProgressIndicator currentStep={step} />
                 </div>

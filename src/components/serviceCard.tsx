@@ -5,21 +5,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ReactNode } from "react";
 
 type ServiceCardProps = {
   title: string;
   description: string;
+  icons: ReactNode;
 };
 
-export default function ServiceCard({ title, description }: ServiceCardProps) {
+export default function ServiceCard({ title, description, icons }: ServiceCardProps) {
   return (
-    <Card className="text-center bg-gray-50">
+    <Card className="flex flex-col text-center justify-between bg-gray-50 h-full">
       <CardHeader>
-        <img
-          src="https://www.svgrepo.com/show/477025/computer.svg"
-          alt={title}
-          className="w-1/3 mx-auto"
-        />
+        <div>
+          {icons}
+        </div>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>

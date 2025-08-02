@@ -7,8 +7,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { StepProps } from '../types';
 import { submitLeadData } from '../utils';
 import BackButton from '../backButton';
+import { useTranslations } from 'next-intl';
 
 export default function Step5ContactForm({ leadData, setLeadData, setStep }: StepProps) {
+    const t = useTranslations('services.steps.step5');
     const handleSubmitContact = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -34,16 +36,16 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
         }
     };
 
-    return (
+        return (
         <section className="w-full mx-auto px-4 py-5 max-w-6xl">
             <div className="my-5 w-full flex items-center gap-5">
                 <BackButton onClick={() => setStep(4)} />
                 <div className="flex-1 text-center">
                     <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">
-                    Quase lá!
+                        {t('title')}
                     </h1>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Baseado nas suas escolhas, o orçamento estimado para o seu projeto é:
+                        {t('description')}
                     </p>
                 </div>
             </div>
@@ -56,20 +58,23 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
 
                     return (
                         <>
-                        <p>Varia entre: R$ {lowerBound.toLocaleString('pt-BR')} e R$ {upperBound.toLocaleString('pt-BR')}</p>
+                        <p>{t('priceRange', { 
+                            lowerBound: lowerBound.toLocaleString('pt-BR'), 
+                            upperBound: upperBound.toLocaleString('pt-BR') 
+                        })}</p>
                         </>
                     );
                 })()}
             </p>
             <p className="text-md text-gray-600 mb-8 text-center">
-                *Este é apenas um valor estimado. O orçamento final pode variar após análise detalhada.
+                {t('disclaimer')}
             </p>
             
             <Card className="w-full max-w-5/6 md:max-w-4/6 bg-gray-50 mx-auto">
                 <CardHeader>
-                    <CardTitle>Seus dados para contato</CardTitle>
+                    <CardTitle>{t('contact.title')}</CardTitle>
                     <CardDescription>
-                    Preencha seus dados para que possamos entrar em contato e discutir seu projeto em detalhes.
+                        {t('contact.description')}
                     </CardDescription>
                 </CardHeader>
 
@@ -77,59 +82,59 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                     <form onSubmit={handleSubmitContact}>
                     <div className="flex flex-col gap-5">
                         <div className="grid gap-2">
-                        <Label htmlFor="name">Nome completo:</Label>
+                        <Label htmlFor="name">{t('contact.fields.name')}</Label>
                         <Input
                             className="bg-white"
                             id="name"
                             name="name"
                             required
-                            placeholder="Seu nome"
+                            placeholder={t('contact.fields.namePlaceholder')}
                             defaultValue={leadData.name || ""}
                         />
                         </div>
 
                         <div className="grid gap-2">
-                        <Label htmlFor="email">E-mail:</Label>
+                        <Label htmlFor="email">{t('contact.fields.email')}</Label>
                         <Input
                             className="bg-white"
                             id="email"
                             name="email"
                             type="email"
                             required
-                            placeholder="seu@email.com"
+                            placeholder={t('contact.fields.emailPlaceholder')}
                             defaultValue={leadData.email || ""}
                         />
                         </div>
 
                         <div className="grid gap-2">
-                        <Label htmlFor="phone">Telefone/WhatsApp</Label>
+                        <Label htmlFor="phone">{t('contact.fields.phone')}</Label>
                         <Input
                             className="bg-white"
                             id="phone"
                             name="phone"
-                            placeholder="(00) 00000-0000"
+                            placeholder={t('contact.fields.phonePlaceholder')}
                             defaultValue={leadData.phone || ""}
                         />
                         </div>
 
                         <div className="grid gap-2">
-                        <Label htmlFor="message">Mensagem adicional (opcional):</Label>
+                        <Label htmlFor="message">{t('contact.fields.message')}</Label>
                         <Textarea
                             className="bg-white"
                             id="message"
                             name="message"
-                            placeholder="Detalhes adicionais sobre seu projeto..."
+                            placeholder={t('contact.fields.messagePlaceholder')}
                             defaultValue={leadData.message || ""}
                         />
                         </div>
                     </div>
 
-                    <Button type="submit" className="mt-5 w-full">
-                        Solicitar orçamento
+                    <Button type="submit" className="mt-5 w-full bg-blue-900 text-white hover:bg-blue-950">
+                        {t('contact.submitButton')}
                     </Button>
                     </form>
                 </CardContent>
-                </Card>
+            </Card>
         </section>
     );
 } 
