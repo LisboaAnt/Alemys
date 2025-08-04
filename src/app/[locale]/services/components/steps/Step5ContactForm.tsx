@@ -37,8 +37,8 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
     };
 
         return (
-        <section className="w-full mx-auto px-4 py-5 max-w-6xl">
-            <div className="my-5 w-full flex items-center gap-5">
+        <section className="w-full mx-auto px-4 md:pt-5 max-w-6xl relative">
+            <div className="md:my-5 mb-5 w-full md:flex items-center gap-5">
                 <BackButton onClick={() => setStep(4)} />
                 <div className="flex-1 text-center">
                     <h1 className="text-5xl text-gray-800 font-bold text-center mb-5">

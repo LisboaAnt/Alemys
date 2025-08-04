@@ -9,21 +9,24 @@ import { Separator } from "@/components/ui/separator"
 
 export default function AboutUs() {
     return(
-        <section className="w-full flex flex-col justify-center items-center bg-gradient-to-l from-blue-900 to-blue-950 pb-5">
-            <Card className="flex justify-center items-center max-w-7xl w-5/6 bg-transparent border-0 shadow-none">
-                <CardHeader className="flex justify-center items-center w-3/4">
-                    <CardTitle className="text-3xl font-bold text-white">Sobre Nós</CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-col justify-center items-center w-5/6">
-                    <Separator className="w-full bg-white py-0.25"/>
-                    <Card className="justify-center text-justify md:w-1/3 w-2/3">
-                        <CardTitle className="w-2/3 text-center font-semibold text-lg">1. Nossa História</CardTitle>
-                        <CardContent>
-                            /*adicione uma história ficticia aqui*/
-                        </CardContent>
-                    </Card>
-                </CardContent>
-            </Card>
+        <section className="w-full flex flex-col justify-center items-center bg-slate-100 py-10">
+            <div className="max-w-7xl w-4/5 flex md:flex-row flex-col justify-center items-center bg-gradient-to-r from-blue-900 to-blue-950">
+                <div className="w-full flex justify-center items-center">
+                    <img
+                        className="absolute w-2/6"
+                        src="https://agilize.com.br/blog/wp-content/uploads/2022/03/empreendedor-de-desenvolvimento-de-software.png"
+                    />
+                </div>
+                <Card className="w-full bg-transparent border-0 shadow-none">
+                    <CardHeader>
+                        <h1 className="text-2xl font-bold text-left text-slate-100">About Us</h1>
+                        <CardTitle></CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <CardDescription></CardDescription>
+                    </CardContent>
+                </Card>
+            </div>
         </section>
     )
 }
