@@ -107,7 +107,7 @@ export default function Step2ServiceTypeSelection({ leadData, setLeadData, setSt
             </div>
         </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service) => {
           const isDisabled = DISABLED_SERVICES.includes(service);
           const translatedService = getTranslatedService(service);

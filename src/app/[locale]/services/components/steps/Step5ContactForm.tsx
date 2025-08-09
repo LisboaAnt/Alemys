@@ -70,7 +70,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                 {t('disclaimer')}
             </p>
             
-            <Card className="w-full max-w-5/6 md:max-w-4/6 bg-gray-50 mx-auto">
+            <Card className="w-full md:w-2/3 lg:w-1/2 max-w-2xl bg-gray-50 mx-auto">
                 <CardHeader>
                     <CardTitle>{t('contact.title')}</CardTitle>
                     <CardDescription>
