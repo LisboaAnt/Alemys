@@ -71,7 +71,7 @@ export function NavigationMenuDemo() {
                     <Link href="/" onClick={handleLinkClick} className="mt-2 md:mt-0">
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('home')}</Button>
                     </Link>
-                    <Link href="/" onClick={handleLinkClick}>
+                    <Link href="/#about" onClick={handleLinkClick}>
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('about')}</Button>
                     </Link>
                     <Link href="/services" onClick={handleLinkClick}>
