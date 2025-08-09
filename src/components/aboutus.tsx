@@ -1,38 +1,15 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import AboutSection from "./aboutSection";
 import { Separator } from "@/components/ui/separator";
 
 export default function AboutUs() {
   return (
-    <section id="about" className="w-full flex flex-col justify-center items-center bg-gradient-to-r from-blue-900/85 to-blue-950/85 py-15 px-4 gap-10">
-      <h1 className="text-2xl font-bold text-left">Sobre Nós</h1>
-      <div className="max-w-7xl w-full flex flex-col md:flex-row items-center bg-gradient-to-r from-blue-900 px-5 to-blue-950 rounded-lg">
-        <div className="w-1/2 relative flex justify-center items-center">
-          <img
-            className="absolute w-full rounded-lg"
-            src="https://agilize.com.br/blog/wp-content/uploads/2022/03/empreendedor-de-desenvolvimento-de-software.png"
-          />
-        </div>
-        <Card className="w-1/2 bg-transparent border-0 shadow-none p-5 md:p-10 text-slate-100">
-          <CardHeader className="space-y-4">
-            <h1 className="text-2xl font-bold text-center">Sobre Nós</h1>
-            <CardTitle className="text-3xl font-extrabold text-justify">
-              Transformamos suas ideias em experiências digitais incríveis
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <CardDescription className="text-slate-200 text-base leading-relaxed text-justify">
-              Nossa equipe é apaixonada por tecnologia, criatividade e excelência. Fundada em 2020, nossa missão é entregar soluções de software que encantam os usuários e geram valor real para nossos clientes. 
-              Acreditamos que o desenvolvimento de sistemas vai além do código: envolve empatia, visão estratégica e compromisso com resultados duradouros.
-            </CardDescription>
-          </CardContent>
-        </Card>
+    <section id="about" className="w-full flex flex-col justify-center items-center bg-gradient-to-r from-blue-900 to-blue-950 py-15 pb-20 px-4 md:gap-15 gap-10">
+      <div className="max-w-7xl w-full flex flex-row justify-start items-center px-5 md:px-10">
+        <h1 className="text-2xl text-gray-50 font-bold text-left">Sobre Nós</h1>
       </div>
+      <AboutSection lado='l' image='https://agilize.com.br/blog/wp-content/uploads/2022/03/empreendedor-de-desenvolvimento-de-software.png' title='Nossa História' description="Fundada em 2015, nossa empresa nasceu do sonho de transformar ideias inovadoras em soluções digitais de alto impacto. Começamos como um pequeno time apaixonado por tecnologia, trabalhando em um escritório improvisado, e hoje atendemos clientes em todo o Brasil com projetos que unem criatividade, estratégia e qualidade técnica."/>
+      <Separator className="md:max-w-5/6 w-full bg-gradient-to-r from-gray-100/50 via-gray-200 to-gray-100/50"/>
+      <AboutSection lado='l' image='https://agilize.com.br/blog/wp-content/uploads/2022/03/empreendedor-de-desenvolvimento-de-software.png' title='Nossa História' description="Fundada em 2015, nossa empresa nasceu do sonho de transformar ideias inovadoras em soluções digitais de alto impacto. Começamos como um pequeno time apaixonado por tecnologia, trabalhando em um escritório improvisado, e hoje atendemos clientes em todo o Brasil com projetos que unem criatividade, estratégia e qualidade técnica."/>
     </section>
   );
 }

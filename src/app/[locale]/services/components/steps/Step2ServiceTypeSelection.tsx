@@ -1,6 +1,6 @@
 import React from 'react';
 import { StepProps } from '../types';
-import { getServiceIcon } from '../icons';
+import { getServiceIcon, getServiceIconByKey } from '../icons';
 import FunnelCard from '../funnelCard';
 import BackButton from '../backButton';
 import { useTranslations } from 'next-intl';
@@ -116,7 +116,8 @@ export default function Step2ServiceTypeSelection({ leadData, setLeadData, setSt
               key={service}
               title={translatedService}
               content=""
-              icon={getServiceIcon(service)}
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              icon={getServiceIconByKey((SERVICE_MAPPINGS as any)[leadData.category!][service])}
               onClick={() => selectServiceType(service)}
               disabled={isDisabled}
             />
