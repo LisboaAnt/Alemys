@@ -9,6 +9,16 @@
       "title": "Serviços de Desenvolvimento Web e Mobile | Alemsys",
       "description": "Oferecemos desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Conheça nossos serviços e solicite um orçamento personalizado.",
       "keywords": "desenvolvimento web,aplicações móveis,sistemas personalizados,mentoria,consultoria TI,programação,software,tecnologia,orçamento,projeto digital"
+    },
+    "about": {
+      "title": "Sobre Nós - Nossa História e Equipe | Alemsys",
+      "description": "Conheça a equipe da Alemsys. Somos desenvolvedores apaixonados do Ceará, Brasil, dedicados a criar soluções digitais inovadoras que fazem a diferença.",
+      "keywords": "sobre nós,equipe,desenvolvedores,Ceará,Brasil,soluções digitais,inovação,empresa de tecnologia"
+    },
+    "contact": {
+      "title": "Contato - Entre em Contato | Alemsys",
+      "description": "Entre em contato com a Alemsys para desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Estamos aqui para ajudar a dar vida às suas ideias.",
+      "keywords": "contato,entre em contato,desenvolvimento web,aplicações móveis,sistemas personalizados,mentoria em tecnologia,solicitação de orçamento"
     }
   },
   "hero": {

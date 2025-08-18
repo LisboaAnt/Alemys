@@ -9,6 +9,16 @@
       "title": "Web- und Mobile-Entwicklungsdienste | Alemsys",
       "description": "Wir bieten Webentwicklung, mobile Anwendungen, maßgeschneiderte Systeme und Technologie-Mentoring. Lernen Sie unsere Dienstleistungen kennen und fordern Sie ein personalisiertes Angebot an.",
       "keywords": "Webentwicklung,mobile Anwendungen,maßgeschneiderte Systeme,Mentoring,IT-Beratung,Programmierung,Software,Technologie,Angebot,digitales Projekt"
+    },
+    "about": {
+      "title": "Über uns - Unsere Geschichte und Team | Alemsys",
+      "description": "Lernen Sie das Alemsys-Team kennen. Wir sind leidenschaftliche Entwickler aus Ceará, Brasilien, die sich der Schaffung innovativer digitaler Lösungen widmen, die einen echten Unterschied machen.",
+      "keywords": "über uns,team,entwickler,Ceará,Brasilien,digitale lösungen,innovation,technologieunternehmen"
+    },
+    "contact": {
+      "title": "Kontakt - Nehmen Sie Kontakt auf | Alemsys",
+      "description": "Kontaktieren Sie Alemsys für Webentwicklung, mobile Anwendungen, maßgeschneiderte Systeme und Technologie-Mentoring. Wir sind hier, um Ihnen dabei zu helfen, Ihre Ideen zum Leben zu erwecken.",
+      "keywords": "kontakt,nehmen sie kontakt auf,webentwicklung,mobile anwendungen,maßgeschneiderte systeme,technologie-mentoring,angebotsanfrage"
     }
   },
   "hero": {

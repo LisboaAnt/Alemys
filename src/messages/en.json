@@ -9,6 +9,16 @@
       "title": "Web and Mobile Development Services | Alemsys",
       "description": "We offer web development, mobile applications, custom systems and technology mentoring. Learn about our services and request a personalized quote.",
       "keywords": "web development,mobile applications,custom systems,mentoring,IT consulting,programming,software,technology,quote,digital project"
+    },
+    "about": {
+      "title": "About Us - Our Story and Team | Alemsys",
+      "description": "Meet the Alemsys team. We are passionate developers from Ceará, Brazil, dedicated to creating innovative digital solutions that make a real difference.",
+      "keywords": "about us,team,developers,Ceará,Brazil,digital solutions,innovation,technology company"
+    },
+    "contact": {
+      "title": "Contact Us - Get in Touch | Alemsys",
+      "description": "Contact Alemsys for web development, mobile applications, custom systems and technology mentoring. We're here to help bring your ideas to life.",
+      "keywords": "contact,get in touch,web development,mobile applications,custom systems,technology mentoring,quote request"
     }
   },
   "hero": {

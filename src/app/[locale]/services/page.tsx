@@ -1,5 +1,3 @@
-"use client"
-
 import ServiceFunnel from "./components/serviceFunnel";
 import ServicesGrid from "./components/servicesgrid";
 import { Metadata } from "next";

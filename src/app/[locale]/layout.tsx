@@ -24,13 +24,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Alemsys",
-    template: "%s | Alemsys"
-  },
-  applicationName: "Alemsys",
-  description: "Alemsys oferece serviços de desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Transforme sua ideia em realidade digital.",
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  
+  const baseUrl = 'https://www.alemsys.digital';
+  
+  return {
+    title: {
+      default: "Alemsys",
+      template: "%s | Alemsys"
+    },
+    applicationName: "Alemsys",
+    description: "Alemsys oferece serviços de desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Transforme sua ideia em realidade digital.",
   keywords: [
     "desenvolvimento web",
     "aplicações móveis", 
@@ -112,7 +117,8 @@ export const metadata: Metadata = {
     'application-name': 'Alemsys',
     'mobile-web-app-capable': 'yes',
   },
-};
+  };
+}
 
 type Props = {
   children: React.ReactNode;
