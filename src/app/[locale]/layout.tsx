@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: {
       default: "Alemsys",
-      template: "%s | Alemsys"
+      template: "Alemsys"
     },
     applicationName: "Alemsys",
     description: "Alemsys oferece serviços de desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Transforme sua ideia em realidade digital.",
@@ -142,6 +142,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       <head>
+        <title>Alemsys</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -149,6 +150,8 @@ export default async function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#1e3a8a" />
         <meta name="theme-color" content="#1e3a8a" />
+        <meta name="application-name" content="Alemsys" />
+        <meta name="apple-mobile-web-app-title" content="Alemsys" />
         
         {/* Structured Data */}
         <script

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const currentUrl = `${baseUrl}/${locale}/services`;
 
   return {
-    title: t('services.title'),
+    title: "Alemsys",
     description: t('services.description'),
     keywords: t('services.keywords').split(','),
     alternates: {
