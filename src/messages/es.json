@@ -1,4 +1,16 @@
 {
+  "metadata": {
+    "home": {
+      "title": "Alemsys - Desarrollo Web y Soluciones Digitales",
+      "description": "Alemsys ofrece servicios de desarrollo web, aplicaciones móviles, sistemas personalizados y mentoría en tecnología. Transforma tu idea en realidad digital.",
+      "keywords": "desarrollo web,aplicaciones móviles,sistemas personalizados,mentoría en tecnología,programación,software,tecnología,startup,empresa digital,consultoría TI"
+    },
+    "services": {
+      "title": "Servicios de Desarrollo Web y Móvil | Alemsys",
+      "description": "Ofrecemos desarrollo web, aplicaciones móviles, sistemas personalizados y mentoría en tecnología. Conoce nuestros servicios y solicita un presupuesto personalizado.",
+      "keywords": "desarrollo web,aplicaciones móviles,sistemas personalizados,mentoría,consultoría TI,programación,software,tecnología,presupuesto,proyecto digital"
+    }
+  },
   "hero": {
     "title": "Soluciones que van más allá del código, más allá de lo obvio.",
     "subtitle": "Transforme ideas en resultados con tecnología, creatividad e innovación.",

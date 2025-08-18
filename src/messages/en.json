@@ -1,4 +1,16 @@
 {
+  "metadata": {
+    "home": {
+      "title": "Alemsys - Web Development and Digital Solutions",
+      "description": "Alemsys offers web development, mobile applications, custom systems and technology mentoring services. Transform your idea into digital reality.",
+      "keywords": "web development,mobile applications,custom systems,technology mentoring,programming,software,technology,startup,digital company,IT consulting"
+    },
+    "services": {
+      "title": "Web and Mobile Development Services | Alemsys",
+      "description": "We offer web development, mobile applications, custom systems and technology mentoring. Learn about our services and request a personalized quote.",
+      "keywords": "web development,mobile applications,custom systems,mentoring,IT consulting,programming,software,technology,quote,digital project"
+    }
+  },
   "hero": {
     "title": "Solutions that go beyond code, beyond the obvious.",
     "subtitle": "Transform ideas into results with technology, creativity and innovation.",

@@ -1,4 +1,16 @@
 {
+  "metadata": {
+    "home": {
+      "title": "Alemsys - Webentwicklung und digitale Lösungen",
+      "description": "Alemsys bietet Webentwicklung, mobile Anwendungen, maßgeschneiderte Systeme und Technologie-Mentoring-Dienste. Transformieren Sie Ihre Idee in digitale Realität.",
+      "keywords": "Webentwicklung,mobile Anwendungen,maßgeschneiderte Systeme,Technologie-Mentoring,Programmierung,Software,Technologie,Startup,digitales Unternehmen,IT-Beratung"
+    },
+    "services": {
+      "title": "Web- und Mobile-Entwicklungsdienste | Alemsys",
+      "description": "Wir bieten Webentwicklung, mobile Anwendungen, maßgeschneiderte Systeme und Technologie-Mentoring. Lernen Sie unsere Dienstleistungen kennen und fordern Sie ein personalisiertes Angebot an.",
+      "keywords": "Webentwicklung,mobile Anwendungen,maßgeschneiderte Systeme,Mentoring,IT-Beratung,Programmierung,Software,Technologie,Angebot,digitales Projekt"
+    }
+  },
   "hero": {
     "title": "Lösungen, die über den Code hinausgehen, über das Offensichtliche hinaus.",
     "subtitle": "Verwandeln Sie Ideen in Ergebnisse mit Technologie, Kreativität und Innovation.",
