@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Card,
   CardDescription,
@@ -14,7 +16,6 @@ type ServiceCardProps = {
 
 export default function ServiceCard({ title, description, icons }: ServiceCardProps) {
   const handleClick = () => {
-    // Navega para a seção do ServiceFunnel usando anchor
     const element = document.getElementById('service-funnel');
     if (element) {
       element.scrollIntoView({ 

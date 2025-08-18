@@ -1,3 +1,5 @@
+'use client'
+
 import ServiceCard from "@/components/serviceCard";
 import { useTranslations } from "next-intl";
 import { getServiceIconByKey } from "@/app/[locale]/services/components/icons";
