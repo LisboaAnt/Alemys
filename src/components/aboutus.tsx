@@ -9,9 +9,9 @@ export default function AboutUs() {
       <div className="max-w-7xl w-full flex flex-row justify-start items-center px-5 md:px-10">
         <h1 className="text-2xl text-gray-50 font-bold text-left">{t("sectionName")}</h1>
       </div>
-      <AboutSection lado='l' image='/imgs/AboutUs/history.jpg' title={t("history.title")} description={t("history.description")}/>
+      <AboutSection lado='l' image='/imgs/aboutUs/history.jpg' title={t("history.title")} description={t("history.description")}/>
       <Separator className="md:max-w-5/6 w-full bg-gradient-to-r from-gray-100/50 via-gray-200 to-gray-100/50"/>
-      <AboutSection lado='l' image='/imgs/AboutUs/goals.jpg' title={t("goals.title")} description={t("goals.description")}/>
+      <AboutSection lado='l' image='/imgs/aboutUs/goals.jpg' title={t("goals.title")} description={t("goals.description")}/>
       <Separator className="md:max-w-5/6 w-full bg-gradient-to-r from-gray-100/50 via-gray-200 to-gray-100/50"/>
       <AboutSection lado='l' image='/imgs/aboutUs/team.jpg' title={t("team.title")} description={t("team.description")}/>
     </section>
