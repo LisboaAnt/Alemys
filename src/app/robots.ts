@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/admin/'],
     },
-    sitemap: 'https://alemsys.digital/sitemap.xml',
+    sitemap: 'https://www.alemsys.digital/sitemap.xml',
   }
 }

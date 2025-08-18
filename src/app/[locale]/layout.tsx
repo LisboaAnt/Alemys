@@ -26,9 +26,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Alemsys - Desenvolvimento Web e Soluções Digitais",
+    default: "Alemsys",
     template: "%s | Alemsys"
   },
+  applicationName: "Alemsys",
   description: "Alemsys oferece serviços de desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Transforme sua ideia em realidade digital.",
   keywords: [
     "desenvolvimento web",
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://alemsys.digital'),
+  metadataBase: new URL('https://www.alemsys.digital'),
   alternates: {
     canonical: '/',
     languages: {
@@ -63,7 +64,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://alemsys.digital',
+    url: 'https://www.alemsys.digital',
     siteName: 'Alemsys',
     title: 'Alemsys - Desenvolvimento Web e Soluções Digitais',
     description: 'Alemsys oferece serviços de desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia. Transforme sua ideia em realidade digital.',
@@ -151,8 +152,8 @@ export default async function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Alemsys",
-              "url": "https://alemsys.digital",
-              "logo": "https://alemsys.digital/alemsys.svg",
+              "url": "https://www.alemsys.digital",
+              "logo": "https://www.alemsys.digital/alemsys.svg",
               "description": "Alemsys oferece serviços de desenvolvimento web, aplicações móveis, sistemas personalizados e mentoria em tecnologia.",
               "address": {
                 "@type": "PostalAddress",

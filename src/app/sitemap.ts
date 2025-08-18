@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { locales } from '@/config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://alemsys.digital'
+  const baseUrl = 'https://www.alemsys.digital'
   
   const routes = [
     '',

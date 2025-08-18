@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
 
-  const baseUrl = 'https://alemsys.digital';
+  const baseUrl = 'https://www.alemsys.digital';
   const currentUrl = `${baseUrl}/${locale}/services`;
 
   return {
