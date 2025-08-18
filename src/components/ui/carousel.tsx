@@ -127,6 +127,25 @@ function Carousel({
         {...props}
       >
         {children}
+        {/* Edge fade overlays */}
+        {orientation === "horizontal" && (
+          <>
+            <div
+              aria-hidden
+              className={cn(
+                "pointer-events-none absolute inset-y-0 md:-left-[4.3px] w-2 z-10",
+                "md:bg-gradient-to-r md:from-background md:via-background md:to-transparent"
+              )}
+            />
+            <div
+              aria-hidden
+              className={cn(
+                "pointer-events-none absolute inset-y-0  md:-right-[4.3px] w-2 z-10",
+                "md:bg-gradient-to-l md:from-background md:via-background md:to-transparent"
+              )}
+            />
+          </>
+        )}
       </div>
     </CarouselContext.Provider>
   )
@@ -138,7 +157,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       ref={carouselRef}
-      className="overflow-hidden"
+      className=" md:overflow-hidden"
       data-slot="carousel-content"
     >
       <div

@@ -11,6 +11,21 @@
     "contact": "Kontakt",
     "language": "Sprache"
   },
+  "about": {
+    "sectionName": "Über Uns",
+    "history": {
+      "title": "Unsere Geschichte",
+      "description": "Gegründet im Jahr 2025, entstand unser Unternehmen aus dem Traum, innovative Ideen in digitale Lösungen mit hoher Wirkung umzusetzen. Wir begannen als kleines Team von Studenten aus dem Hinterland von Ceará, leidenschaftlich für Technologie, und arbeiteten remote von unseren Häusern aus. Seitdem vereinen wir Kreativität, Strategie und technische Exzellenz, um Projekte zu entwickeln, die wirklich einen Unterschied machen."
+    },
+    "goals": {
+      "title": "Unser Ziel",
+      "description": "Unser Ziel ist es, innovative und effiziente Lösungen anzubieten, die Technologie, Kreativität und Exzellenz vereinen, um echten Wert für Unternehmen zu schaffen. Wir streben danach, Erwartungen mit konsistenten und nachhaltigen Ergebnissen zu übertreffen, vertrauensvolle Beziehungen zu stärken und nachhaltiges Wachstum mit positivem Einfluss auf Markt und Gesellschaft zu fördern."
+    },
+    "team": {
+      "title": "Unser Team",
+      "description": "Wir sind ein Team von Entwicklern aus Ceará, bestehend aus qualifizierten und engagierten Fachleuten mit umfassender Erfahrung in verschiedenen Bereichen der Technologie. Engagiert für Innovation und Exzellenz arbeiten wir kollaborativ und strategisch, um Ergebnisse zu liefern, die echten Wert schaffen und die Erwartungen unserer Kunden übertreffen."
+    }
+  },
   "contact": {
     "sectionName": "Kontaktieren Sie uns",
     "left": {
@@ -234,7 +249,7 @@
         "title": "Vielen Dank für Ihr Interesse!",
         "description": "Wir haben Ihre Informationen erhalten und werden uns bald mit Ihnen in Verbindung setzen, um Ihr Projekt zu besprechen.",
         "summary": {
-          "title": "Ihre Projektzusammenfassung",
+          "title": "Zusammenfassung Ihrer Anfrage",
           "serviceType": "Service-Typ:",
           "projectSize": "Projektgröße:",
           "estimatedBudget": "Geschätztes Budget:",
@@ -245,7 +260,11 @@
           },
           "priceRange": "€{lowerBound} bis €{upperBound}"
         },
-        "newQuoteButton": "Neues Angebot"
+        "newQuoteButton": "Neues Angebot",
+        "nextSteps": "Nächste Schritte",
+        "nextStepsDescription": "Ihr Vorschlag wurde erfolgreich gesendet. Unser Team wird sich innerhalb von 24 Stunden mit Ihnen in Verbindung setzen, um ein Treffen zu vereinbaren und die Details Ihres Projekts zu besprechen.",
+        "thankYouMessage": "Vielen Dank, dass Sie Alémsys für Ihr Projekt gewählt haben.",
+        "estimatedDisclaimer": "* Geschätzter Wert basierend auf den bereitgestellten Informationen"
       },
       "backButton": "Zurück",
       "disabledServices": "(Verfügbar bald)"

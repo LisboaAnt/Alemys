@@ -7,7 +7,7 @@ import { Button } from "./ui/button"
 import { useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { locales } from '@/config'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FaGlobe } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
 
@@ -17,6 +17,7 @@ export function NavigationMenuDemo() {
     const router = useRouter();
     const [showLanguageMenu, setShowLanguageMenu] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
 
     // Função para trocar o idioma
     const handleLanguageChange = (locale: string) => {
@@ -36,30 +37,40 @@ export function NavigationMenuDemo() {
         setMobileMenuOpen(false);
     };
 
+    // Função para controlar a animação do menu mobile
+    const handleMobileMenuToggle = () => {
+        setIsAnimating(true);
+        setMobileMenuOpen(!mobileMenuOpen);
+        
+        // Remove overflow-hidden após 500ms
+        setTimeout(() => {
+            setIsAnimating(false);
+        }, 500);
+    };
+
     return (
         <div id="inicio" className="flex -z-10 justify-center bg-gradient-to-r from-blue-900 to-blue-950 p-5 w-full text-white">
             <div className="w-full max-w-7xl justify-between flex flex-wrap">
                 <div className="flex justify-between w-full md:w-auto">
                     <Link href="/" className="flex gap-2 items-center justify-center h-10">
-                        <Image className="w-auto h-8 md:h-10" src="/imgs/logo2.png" alt="logo" width={200} height={200} />
-                        <h1 className="text-xl md:text-2xl text-white font-eastman-roman tracking-[0.15em]">ALÉMSY</h1> 
+                        <Image className="w-auto h-8 md:h-10 filter brightness-0 invert" src="/alemsys.svg" alt="logo" width={200} height={200} />
                     </Link>
                     
                     {/* Botão do menu mobile */}
                     <button 
                         className="md:hidden text-white text-2xl"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        onClick={handleMobileMenuToggle}
                     >
                         {mobileMenuOpen ? <HiX /> : <HiMenu />}
                     </button>
                 </div>
 
                 {/* Menu de navegação - visível em desktop ou quando aberto em mobile */}
-                <div className={`flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-5 items-start md:items-center md:mt-0 transition-all duration-500 ease-in-out md:h-auto md:max-h-full md:overflow-visible ${mobileMenuOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'}`}>
+                <div className={`flex flex-col md:flex-row w-full md:w-auto gap-2 md:gap-5 items-start md:items-center md:mt-0 transition-all duration-500 ease-in-out md:h-auto md:max-h-full md:overflow-visible ${mobileMenuOpen ? 'max-h-96' : 'max-h-0 overflow-hidden'} ${isAnimating ? 'overflow-hidden' : ''}`}>
                     <Link href="/" onClick={handleLinkClick} className="mt-2 md:mt-0">
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('home')}</Button>
                     </Link>
-                    <Link href="/" onClick={handleLinkClick}>
+                    <Link href="/#about" onClick={handleLinkClick}>
                         <Button variant="ghost" className="w-full text-left justify-start md:justify-center">{t('about')}</Button>
                     </Link>
                     <Link href="/services" onClick={handleLinkClick}>

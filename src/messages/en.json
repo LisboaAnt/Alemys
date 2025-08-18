@@ -11,6 +11,21 @@
     "contact": "Contact Us",
     "language": "Language"
   },
+  "about": {
+    "sectionName": "About Us",
+    "history": {
+      "title": "Our History",
+      "description": "Founded in 2025, our company was born from the dream of turning innovative ideas into high-impact digital solutions. We started as a small team of students from the interior of Ceará, passionate about technology, working remotely from our homes. Since then, we have combined creativity, strategy, and technical excellence to develop projects that truly make a difference."
+    },
+    "goals": {
+      "title": "Our Goal",
+      "description": "Our goal is to provide innovative and efficient solutions, combining technology, creativity, and excellence to generate real value for businesses. We strive to exceed expectations with consistent and lasting results, strengthening relationships of trust and promoting sustainable growth with a positive impact on the market and society."
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "We are a team of developers from Ceará, formed by qualified and dedicated professionals with broad experience in various areas of technology. Committed to innovation and excellence, we work collaboratively and strategically to deliver results that generate real value and exceed our clients' expectations."
+    }
+  },
   "contact": {
     "sectionName": "Contact Us",
     "left": {
@@ -234,7 +249,7 @@
         "title": "Thank you for your interest!",
         "description": "We have received your information and will contact you soon to discuss your project.",
         "summary": {
-          "title": "Your project summary",
+          "title": "Your request summary",
           "serviceType": "Service type:",
           "projectSize": "Project size:",
           "estimatedBudget": "Estimated budget:",
@@ -245,7 +260,11 @@
           },
           "priceRange": "${lowerBound} to ${upperBound}"
         },
-        "newQuoteButton": "New quote"
+        "newQuoteButton": "New quote",
+        "nextSteps": "Next steps",
+        "nextStepsDescription": "Your proposal has been sent successfully. Our team will contact you within 24 hours to schedule a meeting and discuss the details of your project.",
+        "thankYouMessage": "Thank you for choosing Alémsys for your project.",
+        "estimatedDisclaimer": "* Estimated value based on the information provided"
       },
       "backButton": "Back",
       "disabledServices": "(Available soon)"

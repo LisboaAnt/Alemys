@@ -60,6 +60,49 @@ export const getServiceIcon = (service: string) => {
     return iconMap[service] || <FaCog className="text-2xl text-gray-600 mb-3" />;
 };
 
+// Mapeamento por chave (independente de idioma)
+export const getServiceIconByKey = (key: string) => {
+    const keyMap: Record<string, React.ReactElement> = {
+        // Novos
+        landingPage: <FaLaptopCode className="text-2xl text-purple-600 mb-3" />,
+        ecommerce: <FaShoppingCart className="text-2xl text-green-600 mb-3" />,
+        blog: <FaBlog className="text-2xl text-blue-600 mb-3" />,
+        marketplace: <FaStore className="text-2xl text-orange-600 mb-3" />,
+        mobileApp: <FaMobile className="text-2xl text-pink-600 mb-3" />,
+        customSystem: <FaCog className="text-2xl text-gray-600 mb-3" />,
+        subscription: <FaUsers className="text-2xl text-indigo-600 mb-3" />,
+        pwa: <FaDesktop className="text-2xl text-teal-600 mb-3" />,
+        events: <FaCalendarAlt className="text-2xl text-red-600 mb-3" />,
+        apiIntegration: <FaPlug className="text-2xl text-yellow-600 mb-3" />,
+
+        // Manutenção
+        bugFix: <FaBug className="text-2xl text-red-600 mb-3" />,
+        visualUpdate: <FaPaintBrush className="text-2xl text-pink-600 mb-3" />,
+        performance: <FaRocket className="text-2xl text-blue-600 mb-3" />,
+        newFeatures: <FaPlus className="text-2xl text-green-600 mb-3" />,
+        contentMaintenance: <FaEdit className="text-2xl text-orange-600 mb-3" />,
+        responsive: <FaTabletAlt className="text-2xl text-purple-600 mb-3" />,
+        security: <FaLock className="text-2xl text-green-700 mb-3" />,
+        pluginUpdate: <FaSync className="text-2xl text-blue-500 mb-3" />,
+        serviceIntegration: <FaExchangeAlt className="text-2xl text-indigo-600 mb-3" />,
+        hosting: <FaServer className="text-2xl text-gray-600 mb-3" />,
+        transformation: <FaArrowUp className="text-2xl text-teal-600 mb-3" />,
+        appEvolution: <FaMobileAlt className="text-2xl text-pink-600 mb-3" />,
+
+        // Mentoria
+        architecture: <FaBuilding className="text-2xl text-blue-600 mb-3" />,
+        planning: <FaChartLine className="text-2xl text-green-600 mb-3" />,
+        codeReview: <FaUserTie className="text-2xl text-purple-600 mb-3" />,
+        training: <FaLightbulb className="text-2xl text-yellow-600 mb-3" />,
+        teamMentoring: <FaGraduationCap className="text-2xl text-orange-600 mb-3" />,
+        uxWorkshops: <FaPalette className="text-2xl text-pink-600 mb-3" />,
+        stackSupport: <FaLayerGroup className="text-2xl text-indigo-600 mb-3" />,
+        productOwner: <FaUsersCog className="text-2xl text-teal-600 mb-3" />,
+    };
+
+    return keyMap[key] || <FaCog className="text-2xl text-gray-600 mb-3" />;
+};
+
 // Função para obter ícone do tamanho do projeto
 export const getProjectSizeIcon = (size: string) => {
     switch(size) {

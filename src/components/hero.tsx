@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "./ui/button"
 import {
   Carousel,
@@ -22,7 +23,7 @@ export default function Hero() {
 
     return (
         <div className="bg-blue-950 -z-0">
-            <div className="flex min-h-[20em] lg:min-h-[30em] justify-center items-center bg-gradient-to-r from-gray-900 via-blue-950 to-gray-900/1 relative overflow-hidden">
+            <div className="flex min-h-[20em] lg:min-h-[30em] justify-center items-center bg-gradient-to-r from-gray-900 via-blue-950/98 md:via-blue-950  to-blue-950/80 md:to-gray-900/1 relative overflow-hidden">
                 <div className="absolute -z-1 right-0 top-0 w-[30em] sm:w-1/1 h-full lg:w-[65em] lg:h-[30em] overflow-hidden">
                     <Carousel 
                         plugins={[autoplay.current]} 
@@ -35,21 +36,56 @@ export default function Hero() {
                         className="w-full h-full"
                     >
                         <CarouselContent className="-ml-0">
-                            <CarouselItem className="pl-0 w-full">
-                                <img src="https://assets-blog.pagseguro.uol.com.br/wp-content/2023/05/shutterstock_2029125182-1-min.jpg" alt="Imagem 1" className="w-full h-full object-cover"/>
+                            <CarouselItem className="pl-0 w-full relative h-full">
+                                <div className="relative w-full h-full min-h-[20em] lg:min-h-[30em]">
+                                    <Image 
+                                        src="https://assets-blog.pagseguro.uol.com.br/wp-content/2023/05/shutterstock_2029125182-1-min.jpg" 
+                                        alt="Imagem 1" 
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                        quality={95}
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 50vw, (max-width: 1536px) 50vw, 50vw"
+                                        placeholder="blur"
+                                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                                    />
+                                </div>
                             </CarouselItem>
-                            <CarouselItem className="pl-0 w-full">
-                                <img src="https://www.meuvademecumonline.com.br/blog/wp-content/uploads/2024/10/exemplos-de-empresas-que-usam-crm.jpeg" alt="Imagem 2" className="w-full h-full object-cover"/>
+                            <CarouselItem className="pl-0 w-full relative h-full">
+                                <div className="relative w-full h-full min-h-[20em] lg:min-h-[30em]">
+                                    <Image 
+                                        src="https://www.meuvademecumonline.com.br/blog/wp-content/uploads/2024/10/exemplos-de-empresas-que-usam-crm.jpeg" 
+                                        alt="Imagem 2" 
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                        quality={95}
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 50vw, (max-width: 1536px) 50vw, 50vw"
+                                        placeholder="blur"
+                                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                                    />
+                                </div>
                             </CarouselItem>
-                            <CarouselItem className="pl-0 w-full">
-                                <img src="https://media.licdn.com/dms/image/v2/C4D12AQFKpLurhUjnpg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1649361497775?e=2147483647&v=beta&t=nA_gEZwezvLuZi-m1OWR7QVXmuBZzvv5MDu6TaFH0T8" alt="Imagem 3" className="w-full h-full object-cover"/>
+                            <CarouselItem className="pl-0 w-full relative h-full">
+                                <div className="relative w-full h-full min-h-[20em] lg:min-h-[30em]">
+                                    <Image 
+                                        src="https://media.licdn.com/dms/image/v2/C4D12AQFKpLurhUjnpg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1649361497775?e=2147483647&v=beta&t=nA_gEZwezvLuZi-m1OWR7QVXmuBZzvv5MDu6TaFH0T8" 
+                                        alt="Imagem 3" 
+                                        fill
+                                        className="object-cover"
+                                        quality={95}
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 50vw, (max-width: 1536px) 50vw, 50vw"
+                                        placeholder="blur"
+                                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                                    />
+                                </div>
                             </CarouselItem>
                         </CarouselContent>
                     </Carousel>
                 </div>
                 <section className="mx-auto w-full flex flex-row items-center max-w-7xl relative z-10">
-                    <div className="w-full px-4 md:w-1/2 flex flex-col items-start gap-6 md:gap-10 md:px-25">
-                        <h1 className="text-3xl md:text-4xl font-bold text-(--background)">
+                    <div className="w-full px-4 md:w-1/2 flex flex-col items-start gap-6  md:gap-0 lg:gap-10 lg:px-25">
+                        <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-(--background)">
                             {t('title')}
                         </h1>
                         <h4 className="text-base md:text-lg text-(--background)">

@@ -39,6 +39,7 @@ export default function Step1CategorySelection({ leadData, setLeadData, setStep 
           content={t('categories.mentoring.content')}
           icon={getCategoryIcon("mentoring")}
           onClick={() => selectCategory("mentoring")}
+          disabled={true}
         />
       </div>
     </section>

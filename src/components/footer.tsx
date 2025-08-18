@@ -2,6 +2,7 @@
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -12,7 +13,13 @@ export default function Footer() {
         
         <div className="w-full flex flex-col md:flex-row items-center justify-between border-b border-blue-50 pb-5 gap-4">
           <div className="flex justify-center w-full md:w-1/2">
-            <h1 className="text-xl md:text-2xl font-bold">Logo da Empresa</h1>
+            <Image 
+              src="/alemsys.svg" 
+              alt="Alémsys Logo" 
+              width={150} 
+              height={50}
+              className="filter brightness-0 invert"
+            />
           </div>
           <div className="flex justify-center gap-5 flex-wrap w-full md:w-1/2">
             <Button variant="ghost" className="flex items-center gap-2">

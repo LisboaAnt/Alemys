@@ -29,7 +29,7 @@ export default function ContactCard() {
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
         <div className="w-full flex gap-5 items-center">
-            <Button className="bg-blue-950 hover:bg-blue-950">
+            <Button className="bg-blue-950 hover:bg-blue-950 cursor-default">
                 <PiHouseLineFill/>
             </Button>
           <div>
@@ -38,7 +38,7 @@ export default function ContactCard() {
           </div>
         </div>
         <div className="w-full flex gap-5 items-center">
-          <Button className="bg-blue-950 hover:bg-blue-950">
+          <Button className="bg-blue-950 hover:bg-blue-950 cursor-default">
             <IoMdMail className="w-5 h-5" />
           </Button>
           <div>
@@ -47,7 +47,7 @@ export default function ContactCard() {
           </div>
         </div>
         <div className="w-full flex gap-5 items-center">
-          <Button className="bg-blue-950 hover:bg-blue-950">
+          <Button className="bg-blue-950 hover:bg-blue-950 cursor-default">
             <FaPhoneVolume className="w-5 h-5" />
           </Button>
           <div>
