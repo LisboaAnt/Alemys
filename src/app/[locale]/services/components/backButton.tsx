@@ -7,7 +7,7 @@ type BackButtonProps = {
   label?: string;
 };
 
-export default function BackButton({ onClick, label = 'Voltar' }: BackButtonProps) {
+export default function BackButton({ onClick }: BackButtonProps) {
   const t = useTranslations('services.steps');
   
   return (

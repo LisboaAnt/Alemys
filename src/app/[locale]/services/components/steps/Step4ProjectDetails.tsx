@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -118,7 +118,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <div className="grid gap-2">
                             <Label htmlFor="clientCount">{t('new.fields.clientCount')}</Label>
                                 <Input
-                                    className="bg-white"
+                                    className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                     id="clientCount"
                                     name="clientCount"
                                     type="number"
@@ -130,7 +130,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <div className="grid gap-2">
                             <Label htmlFor="productCount">{t('new.fields.productCount')}</Label>
                                 <Input
-                                    className="bg-white"
+                                    className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                     id="productCount"
                                     name="productCount"
                                     type="number"
@@ -142,7 +142,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <div className="grid gap-2">
                             <Label htmlFor="pageCount">{t('new.fields.pageCount')}</Label>
                                 <Input
-                                    className="bg-white"
+                                    className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                     id="pageCount"
                                     name="pageCount"
                                     type="number"
@@ -156,7 +156,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                                 <select
                                     id="companySize"
                                     name="companySize"
-                                    className="w-full p-2 bg-white border rounded-md"
+                                    className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                     defaultValue={leadData.companySize || ""}
                                 >
                                 <option value="">{t('new.fields.companySizeOptions.select')}</option>
@@ -176,7 +176,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <select
                                 id="currentComplexity"
                                 name="currentComplexity"
-                                className="w-full p-2 bg-white border rounded-md"
+                                className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 defaultValue={leadData.currentComplexity || ""}
                             >
                                 <option value="">{t('maintenance.fields.currentComplexityOptions.select')}</option>
@@ -189,7 +189,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                         <div className="grid gap-2">
                             <Label htmlFor="affectedFunctionalities">{t('maintenance.fields.affectedFunctionalities')}</Label>
                             <Input
-                                className="bg-white"
+                                className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 id="affectedFunctionalities"
                                 name="affectedFunctionalities"
                                 type="number"
@@ -203,7 +203,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <select
                                 id="urgencyLevel"
                                 name="urgencyLevel"
-                                className="w-full p-2 bg-white border rounded-md"
+                                className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 defaultValue={leadData.urgencyLevel || ""}
                             >
                                 <option value="">{t('maintenance.fields.urgencyLevelOptions.select')}</option>
@@ -218,7 +218,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <select
                                 id="hasDocumentation"
                                 name="hasDocumentation"
-                                className="w-full p-2 bg-white border rounded-md"
+                                className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 defaultValue={leadData.hasDocumentation || ""}
                             >
                                 <option value="">{t('maintenance.fields.hasDocumentationOptions.select')}</option>
@@ -236,7 +236,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                         <div className="grid gap-2">
                             <Label htmlFor="teamSize">{t('mentoring.fields.teamSize')}</Label>
                             <Input
-                                className="bg-white"
+                                className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 id="teamSize"
                                 name="teamSize"
                                 type="number"
@@ -250,7 +250,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <select
                                 id="experienceLevel"
                                 name="experienceLevel"
-                                className="w-full p-2 bg-white border rounded-md"
+                                className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 defaultValue={leadData.experienceLevel || ""}
                             >
                                 <option value="">{t('mentoring.fields.experienceLevelOptions.select')}</option>
@@ -265,7 +265,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <select
                                 id="sessionDuration"
                                 name="sessionDuration"
-                                className="w-full p-2 bg-white border rounded-md"
+                                className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 defaultValue={leadData.sessionDuration || ""}
                             >
                                 <option value="">{t('mentoring.fields.sessionDurationOptions.select')}</option>
@@ -280,7 +280,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                             <select
                                 id="mentorshipType"
                                 name="mentorshipType"
-                                className="w-full p-2 bg-white border rounded-md"
+                                className="w-full p-2 bg-white border rounded-md focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                                 defaultValue={leadData.mentorshipType || ""}
                             >
                                 <option value="">{t('mentoring.fields.mentorshipTypeOptions.select')}</option>
@@ -317,7 +317,7 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
                         <div className="flex flex-col gap-5">
                             {renderCategoryFields()}
                         </div>
-                        <Button type="submit" className="mt-5 w-full bg-blue-900 text-white hover:bg-blue-950">
+                        <Button type="submit" className="mt-5 w-full bg-blue-950 text-white hover:bg-blue-950/95">
                             {t('continueButton')}
                         </Button>
                     </form>
@@ -325,4 +325,4 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
             </Card>
         </section>
     );
-} 
+}

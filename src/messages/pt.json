@@ -11,6 +11,21 @@
     "contact": "Contato",
     "language": "Idioma"
   },
+  "about": {
+    "sectionName": "Sobre Nós",
+    "history": {
+      "title": "Nossa História",
+      "description": "Fundada em 2025, nossa empresa nasceu do sonho de transformar ideias inovadoras em soluções digitais de alto impacto. Iniciamos como um pequeno time de estudantes do interior do Ceará, apaixonados por tecnologia, trabalhando remotamente de nossas casas. Desde então, temos unido criatividade, estratégia e excelência técnica para desenvolver projetos que realmente fazem a diferença."
+    },
+    "goals": {
+      "title": "Nosso Objetivo",
+      "description": "Nosso objetivo é oferecer soluções inovadoras e eficientes, unindo tecnologia, criatividade e excelência para gerar valor real aos negócios. Trabalhamos para superar expectativas com resultados consistentes e duradouros, fortalecendo relações de confiança e promovendo o crescimento sustentável, com impacto positivo no mercado e na sociedade."
+    },
+    "team": {
+      "title": "Nossa Equipe",
+      "description": "Somos uma equipe de desenvolvedores cearenses, formada por profissionais qualificados e dedicados, com ampla experiência em diversas áreas da tecnologia. Comprometidos com a inovação e a excelência, trabalhamos de forma colaborativa e estratégica para entregar resultados que geram valor real e superam as expectativas de nossos clientes."
+    }
+  },
   "contact": {
     "sectionName": "Fale Conosco",
     "left": {
@@ -211,7 +226,7 @@
       },
       "step5": {
         "title": "Quase lá!",
-        "description": "Baseado nas suas escolhas, o orçamento estimado para o seu projeto é:",
+        "description": "Com base nas suas escolhas, o orçamento estimado para o seu projeto é:",
         "priceRange": "Varia entre: R$ {lowerBound} e R$ {upperBound}",
         "disclaimer": "*Este é apenas um valor estimado. O orçamento final pode variar após análise detalhada.",
         "contact": {
@@ -234,7 +249,7 @@
         "title": "Obrigado pelo seu interesse!",
         "description": "Recebemos suas informações e entraremos em contato em breve para discutir seu projeto.",
         "summary": {
-          "title": "Resumo do seu projeto",
+          "title": "Resumo da sua solicitação",
           "serviceType": "Tipo de serviço:",
           "projectSize": "Tamanho do projeto:",
           "estimatedBudget": "Orçamento estimado:",
@@ -245,7 +260,11 @@
           },
           "priceRange": "R$ {lowerBound} à R$ {upperBound}"
         },
-        "newQuoteButton": "Novo orçamento"
+        "newQuoteButton": "Novo orçamento",
+        "nextSteps": "Próximos passos",
+        "nextStepsDescription": "Sua proposta foi enviada com sucesso. Nossa equipe entrará em contato em até 24 horas para agendar uma reunião e discutir os detalhes do seu projeto.",
+        "thankYouMessage": "Obrigado por escolher a Alémsys para seu projeto.",
+        "estimatedDisclaimer": "* Valor estimado com base nas informações fornecidas"
       },
       "backButton": "Voltar",
       "disabledServices": "(Disponível em breve)"

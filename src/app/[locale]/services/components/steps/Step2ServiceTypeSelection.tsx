@@ -1,60 +1,60 @@
 import React from 'react';
 import { StepProps } from '../types';
-import { getServiceIcon, getServiceIconByKey } from '../icons';
+import { getServiceIconByKey } from '../icons';
 import FunnelCard from '../funnelCard';
 import BackButton from '../backButton';
 import { useTranslations } from 'next-intl';
 
-// Mapeamento dos serviços para as chaves de tradução
-const SERVICE_MAPPINGS = {
-  new: {
-    'Landing Page de Campanha': 'landingPage',
-    'Loja Virtual (E-commerce)': 'ecommerce',
-    'Blog ou Portal de Conteúdo': 'blog',
-    'Marketplace': 'marketplace',
-    'Aplicativo Mobile': 'mobileApp',
-    'Sistema Web Personalizado': 'customSystem',
-    'Plataforma com Assinatura': 'subscription',
-    'Progressive Web App (PWA)': 'pwa',
-    'Site para Eventos': 'events',
-    'Integrações com APIs': 'apiIntegration'
-  },
-  maintenance: {
-    'Correção de bugs': 'bugFix',
-    'Atualização visual': 'visualUpdate',
-    'Otimização de performance': 'performance',
-    'Adição de funcionalidades': 'newFeatures',
-    'Manutenção de conteúdo': 'contentMaintenance',
-    'Responsividade': 'responsive',
-    'Backup e segurança': 'security',
-    'Atualização de plugins': 'pluginUpdate',
-    'Integração com novos serviços': 'serviceIntegration',
-    'Migração para nova hospedagem': 'hosting',
-    'Transformação de site antigo': 'transformation',
-    'Evolução para aplicativo': 'appEvolution'
-  },
-  mentoring: {
-    'Consultoria em Arquitetura': 'architecture',
-    'Planejamento técnico': 'planning',
-    'Avaliação de código': 'codeReview',
-    'Treinamentos em tecnologias': 'training',
-    'Mentoria para times': 'teamMentoring',
-    'Workshops de UX/UI': 'uxWorkshops',
-    'Apoio na escolha de stack': 'stackSupport',
-    'Mentoria para Product Owners': 'productOwner'
-  }
+// Chaves dos serviços disponíveis por categoria
+const SERVICE_KEYS = {
+  new: [
+    'landingPage',
+    'ecommerce', 
+    'blog',
+    //'marketplace',
+    'mobileApp',
+    'customSystem',
+    //'subscription',
+    'pwa',
+    'events',
+    'apiIntegration'
+  ],
+  maintenance: [
+    'bugFix',
+    'visualUpdate',
+    'performance',
+    'newFeatures',
+    'contentMaintenance',
+    'responsive',
+    'security',
+    'pluginUpdate',
+    'serviceIntegration',
+    'hosting',
+    'transformation',
+    'appEvolution'
+  ],
+  mentoring: [
+    'architecture',
+    'planning',
+    'codeReview',
+    //'training',
+    //'teamMentoring',
+    //'uxWorkshops',
+    //'stackSupport',
+    //'productOwner'
+  ]
 };
 
-// Configuração fácil: adicione aqui os serviços que devem ficar desabilitados
+// Configuração fácil: adicione aqui as chaves dos serviços que devem ficar desabilitados
 const DISABLED_SERVICES: string[] = [
-  // Exemplos - descomente ou adicione os serviços que quiser desabilitar:
-  "Marketplace",
-  "Plataforma com Assinatura",
-  "Mentoria para Product Owners",
-  "Treinamentos em tecnologias",
-  "Mentoria para times",
-  "Workshops de UX/UI",
-  "Apoio na escolha de stack"
+  // Exemplos - descomente ou adicione as chaves dos serviços que quiser desabilitar:
+  //"marketplace",
+  //"subscription",
+  //"productOwner",
+  //"training",
+  //"teamMentoring",
+  //"uxWorkshops",
+  //"stackSupport"
 
 ];
 
@@ -62,6 +62,7 @@ export default function Step2ServiceTypeSelection({ leadData, setLeadData, setSt
   const t = useTranslations('services.steps.step2');
   
   const selectServiceType = (serviceType: string) => {
+    // serviceType já é a chave do serviço
     setLeadData({ ...leadData, serviceType });
     setStep(3);
   };
@@ -69,27 +70,24 @@ export default function Step2ServiceTypeSelection({ leadData, setLeadData, setSt
   const getServicesForCategory = () => {
     switch (leadData.category) {
       case "new":
-        return Object.keys(SERVICE_MAPPINGS.new);
+        return SERVICE_KEYS.new;
       case "maintenance":
-        return Object.keys(SERVICE_MAPPINGS.maintenance);
+        return SERVICE_KEYS.maintenance;
       case "mentoring":
-        return Object.keys(SERVICE_MAPPINGS.mentoring);
+        return SERVICE_KEYS.mentoring;
       default:
         return [];
     }
   };
 
-  const getTranslatedService = (service: string) => {
-    if (!leadData.category) return service;
+  const getTranslatedService = (serviceKey: string) => {
+    if (!leadData.category) return serviceKey;
     
-    const mapping = SERVICE_MAPPINGS[leadData.category as keyof typeof SERVICE_MAPPINGS];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const key = (mapping as any)[service];
-    
-    if (key) {
-      return t(`services.${leadData.category}.${key}`);
+    try {
+      return t(`services.${leadData.category}.${serviceKey}`);
+    } catch {
+      return serviceKey;
     }
-    return service;
   };
 
   const services = getServicesForCategory();
@@ -116,8 +114,7 @@ export default function Step2ServiceTypeSelection({ leadData, setLeadData, setSt
               key={service}
               title={translatedService}
               content=""
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any
-              icon={getServiceIconByKey((SERVICE_MAPPINGS as any)[leadData.category!][service])}
+              icon={getServiceIconByKey(service)}
               onClick={() => selectServiceType(service)}
               disabled={isDisabled}
             />

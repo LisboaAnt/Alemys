@@ -1,15 +1,6 @@
-"use client"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
-} from "@/components/ui/carousel";
-import ServiceCard from "./serviceCard";
+import ServiceCard from "@/components/serviceCard";
 import { useTranslations } from "next-intl";
 import { getServiceIconByKey } from "@/app/[locale]/services/components/icons";
-import Link from "next/link";
 
 const SERVICE_KEYS = {
   new: [
@@ -38,6 +29,7 @@ const SERVICE_KEYS = {
     "transformation",
     "appEvolution",
   ],
+  /* 
   mentoring: [
     "architecture",
     "planning",
@@ -47,12 +39,12 @@ const SERVICE_KEYS = {
     "uxWorkshops",
     "stackSupport",
     "productOwner",
-  ],
+  ],*/
 } as const;
 
 type CategoryKey = keyof typeof SERVICE_KEYS;
 
-export default function Services() {
+export default function ServicesGrid() {
   const tStep2 = useTranslations("services.steps.step2");
   const tRoot = useTranslations("services");
 
@@ -71,35 +63,23 @@ export default function Services() {
   );
 
   return (
-    <section className="flex justify-center py-10 md:py-15">
-      <div className="w-full max-w-7xl flex flex-col gap-8 md:px-10">
-        <h1 className="text-2xl pl-8 md:pl-0 font-bold text-left text-foreground">
+    <section className="flex justify-center py-10 md:pb-10 md:pt-0">
+      <div className="w-full max-w-7xl flex flex-col gap-8 px-5 md:px-10">
+        <h1 className="text-2xl font-bold text-left text-foreground">
           {tRoot("title")}
         </h1>
-        <div className="w-full flex justify-center items-center overflow-hidden md:overflow-visible">
-          <Carousel 
-            className="w-4/6 md:w-full" 
-            opts={{ loop: true }}
-          >
-            <CarouselContent>
-              {allServices.map((service, i) => (
-                  <CarouselItem
-                    className="h-1rem basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5"
-                    key={i}
-                  >
-                    <Link href="/services" key={i} className="w-full">
-                    <ServiceCard
-                      title={service.title}
-                      description={service.description}
-                      icons={service.icon}
-                    />
-                    </Link>
-                  </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+        <div className="w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            {allServices.map((service, i) => (
+              <div key={i} className="h-full">
+                <ServiceCard
+                  title={service.title}
+                  description={service.description}
+                  icons={service.icon}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -57,16 +57,26 @@ export const calculatePriceAdjustment = (
     return priceAdjustment;
 };
 
-// Função para enviar dados do lead (placeholder para conexão com backend)
+// Função para enviar dados do lead para a API de proposta
 export const submitLeadData = async (leadData: LeadData): Promise<boolean> => {
     try {
-        // TODO: Implementar conexão com backend
-        console.log("Dados do lead para envio:", leadData);
-        
-        // Simular envio bem-sucedido
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        return true;
+        const response = await fetch('/api/send-proposal', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(leadData),
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            console.log("Proposta enviada com sucesso:", data);
+            return true;
+        } else {
+            console.error("Erro ao enviar proposta:", data.error);
+            return false;
+        }
     } catch (error) {
         console.error("Erro ao enviar dados do lead:", error);
         return false;

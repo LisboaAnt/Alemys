@@ -7,10 +7,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { StepProps } from '../types';
 import { submitLeadData } from '../utils';
 import BackButton from '../backButton';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Step5ContactForm({ leadData, setLeadData, setStep }: StepProps) {
     const t = useTranslations('services.steps.step5');
+    const locale = useLocale();
+    
+    // Capturar o idioma usando o hook do next-intl
+    const userLanguage = locale;
+    
     const handleSubmitContact = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -21,6 +26,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
             email: formData.get('email') as string,
             phone: formData.get('phone') as string,
             message: formData.get('message') as string,
+            userLanguage: userLanguage,
         };
 
         setLeadData(updatedLeadData);
@@ -58,10 +64,10 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
 
                     return (
                         <>
-                        <p>{t('priceRange', { 
+                        {t('priceRange', { 
                             lowerBound: lowerBound.toLocaleString('pt-BR'), 
                             upperBound: upperBound.toLocaleString('pt-BR') 
-                        })}</p>
+                        })}
                         </>
                     );
                 })()}
@@ -84,7 +90,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                         <div className="grid gap-2">
                         <Label htmlFor="name">{t('contact.fields.name')}</Label>
                         <Input
-                            className="bg-white"
+                            className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                             id="name"
                             name="name"
                             required
@@ -96,7 +102,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                         <div className="grid gap-2">
                         <Label htmlFor="email">{t('contact.fields.email')}</Label>
                         <Input
-                            className="bg-white"
+                            className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                             id="email"
                             name="email"
                             type="email"
@@ -109,7 +115,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                         <div className="grid gap-2">
                         <Label htmlFor="phone">{t('contact.fields.phone')}</Label>
                         <Input
-                            className="bg-white"
+                            className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                             id="phone"
                             name="phone"
                             placeholder={t('contact.fields.phonePlaceholder')}
@@ -120,7 +126,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                         <div className="grid gap-2">
                         <Label htmlFor="message">{t('contact.fields.message')}</Label>
                         <Textarea
-                            className="bg-white"
+                            className="bg-white focus-visible:border-blue-800 focus-visible:ring-blue-700/75 focus-visible:ring-[3px]"
                             id="message"
                             name="message"
                             placeholder={t('contact.fields.messagePlaceholder')}
@@ -129,7 +135,7 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                         </div>
                     </div>
 
-                    <Button type="submit" className="mt-5 w-full bg-blue-900 text-white hover:bg-blue-950">
+                    <Button type="submit" className="mt-5 w-full bg-blue-950 text-white hover:bg-blue-950/95">
                         {t('contact.submitButton')}
                     </Button>
                     </form>
@@ -137,4 +143,4 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
             </Card>
         </section>
     );
-} 
+}

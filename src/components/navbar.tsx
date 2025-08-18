@@ -7,7 +7,7 @@ import { Button } from "./ui/button"
 import { useTranslations } from 'next-intl'
 import { usePathname, useRouter } from 'next/navigation'
 import { locales } from '@/config'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { FaGlobe } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
 
@@ -53,8 +53,7 @@ export function NavigationMenuDemo() {
             <div className="w-full max-w-7xl justify-between flex flex-wrap">
                 <div className="flex justify-between w-full md:w-auto">
                     <Link href="/" className="flex gap-2 items-center justify-center h-10">
-                        <Image className="w-auto h-8 md:h-10" src="/imgs/logo2.png" alt="logo" width={200} height={200} />
-                        <h1 className="text-xl md:text-2xl text-white font-eastman-roman tracking-[0.15em]">ALÉMSY</h1> 
+                        <Image className="w-auto h-8 md:h-10 filter brightness-0 invert" src="/alemsys.svg" alt="logo" width={200} height={200} />
                     </Link>
                     
                     {/* Botão do menu mobile */}
