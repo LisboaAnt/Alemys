@@ -172,7 +172,7 @@
           "title": "Detalhes do novo projeto",
           "description": "Forneça informações sobre o projeto que você deseja criar:",
           "fields": {
-            "clientCount": "Quantidade estimada de usuários/clientes:",
+            "clientCount": "Quantidade estimada de usuários/clientes simultâneos:",
             "clientCountPlaceholder": "Ex: 500",
             "productCount": "Quantidade de produtos/itens (se aplicável):",
             "productCountPlaceholder": "Ex: 50",
