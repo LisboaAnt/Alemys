@@ -21,8 +21,9 @@
       "keywords": "contact,get in touch,web development,mobile applications,custom systems,technology mentoring,quote request"
     }
   },
+
   "hero": {
-    "title": "Solutions that go beyond code, beyond the obvious.",
+    "title": "Solutions that go beyond the code, turning your idea into reality.",
     "subtitle": "Transform ideas into results with technology, creativity and innovation.",
     "button": "Contact us"
   },
@@ -296,6 +297,14 @@
     "copyright": "© 2025 Alémsys. All rights reserved.",
     "terms": "Terms",
     "privacy": "Privacy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "explore": "Explore",
+    "home": "Home",
+    "services": "Services",
+    "contacts": "Contacts",
+    "address": "Address",
+    "addressValue": "Av. Araújo Lima 1348 Russas - CE",
+    "email": "Email",
+    "phone": "Phone"
   }
 }

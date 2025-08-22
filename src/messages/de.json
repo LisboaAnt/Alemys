@@ -21,8 +21,9 @@
       "keywords": "kontakt,nehmen sie kontakt auf,webentwicklung,mobile anwendungen,maßgeschneiderte systeme,technologie-mentoring,angebotsanfrage"
     }
   },
+
   "hero": {
-    "title": "Lösungen, die über den Code hinausgehen, über das Offensichtliche hinaus.",
+    "title": "Lösungen, die über den Code hinausgehen und Ihre Idee in die Realität umsetzen.",
     "subtitle": "Verwandeln Sie Ideen in Ergebnisse mit Technologie, Kreativität und Innovation.",
     "button": "Kontaktieren Sie uns"
   },
@@ -296,6 +297,14 @@
     "copyright": "© 2025 Alémsys. Alle Rechte vorbehalten.",
     "terms": "Bedingungen",
     "privacy": "Datenschutz",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "explore": "Erkunden",
+    "home": "Startseite",
+    "services": "Dienstleistungen",
+    "contacts": "Kontakte",
+    "address": "Adresse",
+    "addressValue": "Av. Araújo Lima 1348 Russas - CE",
+    "email": "E-Mail",
+    "phone": "Telefon"
   }
 }

@@ -22,7 +22,7 @@ export default function Hero() {
     )
 
     return (
-        <div className="bg-blue-950 -z-0">
+        <div id="hero" className="bg-blue-950 -z-0">
             <div className="flex min-h-[20em] lg:min-h-[30em] justify-center items-center bg-gradient-to-r from-gray-900 via-blue-950/98 md:via-blue-950  to-blue-950/80 md:to-gray-900/1 relative overflow-hidden">
                 <div className="absolute -z-1 right-0 top-0 w-[30em] sm:w-1/1 h-full lg:w-[65em] lg:h-[30em] overflow-hidden">
                     <Carousel 

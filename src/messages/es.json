@@ -21,8 +21,9 @@
       "keywords": "contacto,ponte en contacto,desarrollo web,aplicaciones móviles,sistemas personalizados,mentoría en tecnología,solicitud de presupuesto"
     }
   },
+
   "hero": {
-    "title": "Soluciones que van más allá del código, más allá de lo obvio.",
+    "title": "Soluciones que van más allá del código, convirtiendo tu idea en realidad.",
     "subtitle": "Transforme ideas en resultados con tecnología, creatividad e innovación.",
     "button": "Contáctenos"
   },
@@ -296,6 +297,14 @@
     "copyright": "© 2025 Alémsys. Todos los derechos reservados.",
     "terms": "Términos",
     "privacy": "Privacidad",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "explore": "Explorar",
+    "home": "Inicio",
+    "services": "Servicios",
+    "contacts": "Contactos",
+    "address": "Dirección",
+    "addressValue": "Av. Araújo Lima 1348 Russas - CE",
+    "email": "Correo",
+    "phone": "Teléfono"
   }
 }

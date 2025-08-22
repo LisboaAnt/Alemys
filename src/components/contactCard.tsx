@@ -34,7 +34,7 @@ export default function ContactCard() {
             </Button>
           <div>
             <Label className="text-sm text-blue-950">{t('address')}</Label>
-            <p className="text-base text-foreground">Rua Fulan de Tal</p>
+            <p className="text-base text-foreground">Av. Araújo Lima 1348 Russas - CE</p>
           </div>
         </div>
         <div className="w-full flex gap-5 items-center">
@@ -43,7 +43,7 @@ export default function ContactCard() {
           </Button>
           <div>
             <Label className="text-sm text-blue-950">{t('email')}</Label>
-            <p className="text-base text-foreground">email@exemplo.com</p>
+            <p className="text-base text-foreground">alemsys.digital@gmail.com</p>
           </div>
         </div>
         <div className="w-full flex gap-5 items-center">
@@ -52,7 +52,7 @@ export default function ContactCard() {
           </Button>
           <div>
             <Label className="text-sm text-blue-950">{t('phone')}</Label>
-            <p className="text-base text-foreground">(00) 00000-0000</p>
+            <p className="text-base text-foreground">+55 (69) 99241-0109</p>
           </div>
         </div>
       </CardContent>
