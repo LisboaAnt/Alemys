@@ -13,20 +13,26 @@ export default function Footer() {
   return (
     <footer className="text-center bottom-0 left-0 w-full bg-gradient-to-r from-blue-900 to-blue-950 text-white py-6">
       <div className="max-w-7xl mx-auto flex flex-col gap-8 px-4 md:px-10">
-        <div className="w-full flex flex-col md:flex-row justify-between md:gap-10 gap-5">
-          <div className="w-full flex justify-center">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center md:gap-10 gap-5">
+          <div className="w-full flex justify-center items-center">
             <Image className="w-auto h-8 md:h-10 filter brightness-0 invert" src="/alemsys.svg" alt="logo" width={200} height={200} />
           </div>
-          <div className="w-full flex justify-center gap-5">
-            <Button variant="ghost" className="w-1/4">
-              <FaInstagram/>Instagram
-            </Button>
-            <Button variant="ghost" className="w-1/4">
-              <FaLinkedin/>LinkedIn
-            </Button>
-            <Button variant="ghost" className="w-1/4">
-              <FaWhatsapp/>Whatsapp
-            </Button>
+          <div className="md:w-full flex justify-center gap-5 items-center">
+            <Link href="">
+              <Button variant="ghost">
+                <FaInstagram/>Instagram
+              </Button>
+            </Link>
+            <Link href="https://www.linkedin.com/company/alémsys-digital">
+              <Button variant="ghost">
+                <FaLinkedin/>LinkedIn
+              </Button>
+            </Link>
+            <Link href="">
+              <Button variant="ghost">
+                <FaWhatsapp/>Whatsapp
+              </Button>
+            </Link>
           </div>
         </div>
         <Separator className="w-full bg-gray-100"/>
@@ -54,7 +60,7 @@ export default function Footer() {
 
           <div className="flex flex-col items-center w-full md:w-1/2 gap-4">
             <h2 className="text-xl font-semibold font-serif">{t('contacts')}</h2>
-            <div className="flex flex-col gap-4 items-center md:items-start">
+            <div className="flex flex-col gap-4 items-center">
               <div className="flex gap-3">
                 <h3 className="text-base font-semibold">{t('address')}:</h3>
                 <h4 className="text-base font-normal">{t('addressValue')}</h4>
