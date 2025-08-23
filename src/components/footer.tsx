@@ -13,22 +13,22 @@ export default function Footer() {
   return (
     <footer className="text-center bottom-0 left-0 w-full bg-gradient-to-r from-blue-900 to-blue-950 text-white py-6">
       <div className="max-w-7xl mx-auto flex flex-col gap-8 px-4 md:px-10">
-        <div className="w-full flex flex-col md:flex-row justify-between md:gap-10 gap-5">
-          <div className="w-full flex justify-center">
+        <div className="w-full flex flex-col md:flex-row justify-between items-center md:gap-10 gap-5">
+          <div className="w-full flex justify-center items-center">
             <Image className="w-auto h-8 md:h-10 filter brightness-0 invert" src="/alemsys.svg" alt="logo" width={200} height={200} />
           </div>
-          <div className="w-full flex justify-center gap-5">
-            <Link href="" className="w-1/4">
+          <div className="md:w-full flex justify-center gap-5 items-center">
+            <Link href="">
               <Button variant="ghost">
                 <FaInstagram/>Instagram
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/company/alémsys-digital" className="w-1/4">
+            <Link href="https://www.linkedin.com/company/alémsys-digital">
               <Button variant="ghost">
                 <FaLinkedin/>LinkedIn
               </Button>
             </Link>
-            <Link href="" className="w-1/4">
+            <Link href="">
               <Button variant="ghost">
                 <FaWhatsapp/>Whatsapp
               </Button>
