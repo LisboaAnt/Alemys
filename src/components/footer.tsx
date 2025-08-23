@@ -18,15 +18,21 @@ export default function Footer() {
             <Image className="w-auto h-8 md:h-10 filter brightness-0 invert" src="/alemsys.svg" alt="logo" width={200} height={200} />
           </div>
           <div className="w-full flex justify-center gap-5">
-            <Button variant="ghost" className="w-1/4">
-              <FaInstagram/>Instagram
-            </Button>
-            <Button variant="ghost" className="w-1/4">
-              <FaLinkedin/>LinkedIn
-            </Button>
-            <Button variant="ghost" className="w-1/4">
-              <FaWhatsapp/>Whatsapp
-            </Button>
+            <Link href="" className="w-1/4">
+              <Button variant="ghost">
+                <FaInstagram/>Instagram
+              </Button>
+            </Link>
+            <Link href="https://www.linkedin.com/company/alémsys-digital" className="w-1/4">
+              <Button variant="ghost">
+                <FaLinkedin/>LinkedIn
+              </Button>
+            </Link>
+            <Link href="" className="w-1/4">
+              <Button variant="ghost">
+                <FaWhatsapp/>Whatsapp
+              </Button>
+            </Link>
           </div>
         </div>
         <Separator className="w-full bg-gray-100"/>
@@ -54,7 +60,7 @@ export default function Footer() {
 
           <div className="flex flex-col items-center w-full md:w-1/2 gap-4">
             <h2 className="text-xl font-semibold font-serif">{t('contacts')}</h2>
-            <div className="flex flex-col gap-4 items-center md:items-start">
+            <div className="flex flex-col gap-4 items-center">
               <div className="flex gap-3">
                 <h3 className="text-base font-semibold">{t('address')}:</h3>
                 <h4 className="text-base font-normal">{t('addressValue')}</h4>
