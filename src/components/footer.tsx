@@ -18,7 +18,7 @@ export default function Footer() {
             <Image className="w-auto h-8 md:h-10 filter brightness-0 invert" src="/alemsys.svg" alt="logo" width={200} height={200} />
           </div>
           <div className="md:w-full flex justify-center gap-5 items-center">
-            <Link href="">
+            <Link href="https://www.instagram.com/alemsysdigital">
               <Button variant="ghost">
                 <FaInstagram/>Instagram
               </Button>
