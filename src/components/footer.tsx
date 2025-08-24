@@ -28,7 +28,7 @@ export default function Footer() {
                 <FaLinkedin/>LinkedIn
               </Button>
             </Link>
-            <Link href="">
+            <Link href="https://wa.me/5588994412533">
               <Button variant="ghost">
                 <FaWhatsapp/>Whatsapp
               </Button>
@@ -67,21 +67,19 @@ export default function Footer() {
               </div>
               <div className="flex gap-3">
                 <h3 className="text-base font-semibold">{t('email')}:</h3>
-                <a 
-                  href="mailto:alemsys.digital@gmail.com" 
-                  className="text-base font-normal hover:text-blue-300 transition-colors"
+                <p
+                  className="text-base font-normal"
                 >
                   alemsys.digital@gmail.com
-                </a>
+                </p>
               </div>
               <div className="flex gap-3">
                 <h3 className="text-base font-semibold">{t('phone')}:</h3>
-                <a 
-                  href="tel:+5569992410109" 
-                  className="text-base font-normal hover:text-blue-300 transition-colors"
+                <p
+                  className="text-base font-normal"
                 >
-                  +55 (69) 99241-0109
-                </a>
+                  +55 (88) 99441-2533
+                </p>
               </div>
             </div>
           </div>
