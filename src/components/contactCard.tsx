@@ -52,7 +52,7 @@ export default function ContactCard() {
           </Button>
           <div>
             <Label className="text-sm text-blue-950">{t('phone')}</Label>
-            <p className="text-base text-foreground">+55 (69) 99241-0109</p>
+            <p className="text-base text-foreground">+55 (88) 99441-2533</p>
           </div>
         </div>
       </CardContent>
