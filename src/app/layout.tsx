@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -120,7 +121,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${eastmanRoman.variable} antialiased`}
       >
         {children}
-        
+        <Analytics/>
         {/* Structured Data */}
         <script
           type="application/ld+json"
