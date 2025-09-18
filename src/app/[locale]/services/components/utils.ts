@@ -48,17 +48,10 @@ export const calculatePriceAdjustment = (
 ): number => {
     let priceAdjustment = 1;
     
-<<<<<<< HEAD
     if (clientCount > 1000) priceAdjustment += 0.3;
     if (productCount > 100) priceAdjustment += 0.2;
     if (pageCount > 1) priceAdjustment += (pageCount * 0.1);
     if (companySize === "grande") priceAdjustment += 0.3;
-=======
-    if (clientCount > 1000) priceAdjustment += 0.2;
-    if (productCount > 100) priceAdjustment += 0.15;
-    if (pageCount > 10) priceAdjustment += 0.15;
-    if (companySize === "grande") priceAdjustment += 0.2;
->>>>>>> 42024913e8565473f0716ccc2ad7177d811ff767
     
     return priceAdjustment;
 };
