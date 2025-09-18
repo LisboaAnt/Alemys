@@ -5,36 +5,36 @@ export const getBasePrice = (category: ServiceCategory, serviceType: ServiceType
     if (!category || !serviceType) return 0;
     
     const prices: Record<string, number> = {
-        "Landing Page de Campanha": 1500,
-        "Loja Virtual (E-commerce)": 5000,
-        "Blog ou Portal de Conteúdo": 3000,
-        "Marketplace": 15000,
-        "Aplicativo Mobile": 8000,
-        "Sistema Web Personalizado": 6000,
-        "Plataforma com Assinatura": 7500,
-        "Progressive Web App (PWA)": 5000,
-        "Site para Eventos": 1000,
-        "Integrações com APIs": 1200,
-        "Correção de bugs": 1000,
-        "Atualização visual": 800,
-        "Otimização de performance": 1500,
-        "Adição de funcionalidades": 1000,
-        "Manutenção de conteúdo": 400,
-        "Responsividade": 1200,
-        "Backup e segurança": 900,
-        "Atualização de plugins": 800,
-        "Integração com novos serviços": 2000,
-        "Migração para nova hospedagem": 500,
-        "Transformação de site antigo": 1500,
-        "Evolução para aplicativo": 3500,
-        "Consultoria em Arquitetura": 2500,
-        "Planejamento técnico": 2000,
-        "Avaliação de código": 800,
-        "Treinamentos em tecnologias": 7000,
-        "Mentoria para times": 9000,
-        "Workshops de UX/UI": 6000,
-        "Apoio na escolha de stack": 4500,
-        "Mentoria para Product Owners": 7500,
+                "Landing Page de Campanha": 1200,
+        "Loja Virtual (E-commerce)": 4000,
+        "Blog ou Portal de Conteúdo": 2500,
+        "Marketplace": 12000,
+        "Aplicativo Mobile": 7000,
+        "Sistema Web Personalizado": 5000,
+        "Plataforma com Assinatura": 6000,
+        "Progressive Web App (PWA)": 4000,
+        "Site para Eventos": 900,
+        "Integrações com APIs": 1000,
+        "Correção de bugs": 900,
+        "Atualização visual": 700,
+        "Otimização de performance": 1200,
+        "Adição de funcionalidades": 900,
+        "Manutenção de conteúdo": 350,
+        "Responsividade": 1000,
+        "Backup e segurança": 800,
+        "Atualização de plugins": 700,
+        "Integração com novos serviços": 1500,
+        "Migração para nova hospedagem": 400,
+        "Transformação de site antigo": 1200,
+        "Evolução para aplicativo": 3000,
+        "Consultoria em Arquitetura": 2000,
+        "Planejamento técnico": 1500,
+        "Avaliação de código": 700,
+        "Treinamentos em tecnologias": 5000,
+        "Mentoria para times": 7000,
+        "Workshops de UX/UI": 4500,
+        "Apoio na escolha de stack": 3500,
+        "Mentoria para Product Owners": 6000,
     };
     
     return prices[serviceType] || 1300; 
@@ -48,10 +48,10 @@ export const calculatePriceAdjustment = (
 ): number => {
     let priceAdjustment = 1;
     
-    if (clientCount > 1000) priceAdjustment += 0.3;
-    if (productCount > 100) priceAdjustment += 0.2;
-    if (pageCount > 10) priceAdjustment += 0.2;
-    if (companySize === "grande") priceAdjustment += 0.3;
+    if (clientCount > 1000) priceAdjustment += 0.2;
+    if (productCount > 100) priceAdjustment += 0.15;
+    if (pageCount > 10) priceAdjustment += 0.15;
+    if (companySize === "grande") priceAdjustment += 0.2;
     
     return priceAdjustment;
 };
