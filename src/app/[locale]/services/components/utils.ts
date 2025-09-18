@@ -50,7 +50,7 @@ export const calculatePriceAdjustment = (
     
     if (clientCount > 1000) priceAdjustment += 0.3;
     if (productCount > 100) priceAdjustment += 0.2;
-    if (pageCount > 10) priceAdjustment += 0.2;
+    if (pageCount > 1) priceAdjustment += (pageCount * 0.1);
     if (companySize === "grande") priceAdjustment += 0.3;
     
     return priceAdjustment;
