@@ -9,13 +9,34 @@ import { submitLeadData } from '../utils';
 import BackButton from '../backButton';
 import { useTranslations, useLocale } from 'next-intl';
 
+// Função para aplicar máscara de telefone brasileiro
+function formatPhone(value: string) {
+    value = value.replace(/\D/g, '');
+    if (value.length > 10) {
+        return value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+    } else if (value.length > 6) {
+        return value.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, '($1) $2-$3');
+    } else if (value.length > 2) {
+        return value.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+    } else {
+        return value;
+    }
+}
+
 export default function Step5ContactForm({ leadData, setLeadData, setStep }: StepProps) {
     const t = useTranslations('services.steps.step5');
     const locale = useLocale();
     
     // Capturar o idioma usando o hook do next-intl
     const userLanguage = locale;
-    
+
+    const [phoneMasked, setPhoneMasked] = React.useState(leadData.phone || "");
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const masked = formatPhone(e.target.value);
+        setPhoneMasked(masked);
+        setLeadData({ ...leadData, phone: masked });
+    };
+
     const handleSubmitContact = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -119,7 +140,8 @@ export default function Step5ContactForm({ leadData, setLeadData, setStep }: Ste
                             id="phone"
                             name="phone"
                             placeholder={t('contact.fields.phonePlaceholder')}
-                            defaultValue={leadData.phone || ""}
+                            value={phoneMasked}
+                            onChange={handlePhoneChange}
                         />
                         </div>
 
