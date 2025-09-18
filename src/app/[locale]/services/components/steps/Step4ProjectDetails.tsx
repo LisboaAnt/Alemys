@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { StepProps, LeadDataUpdate, LeadData } from '../types';
-import { calculatePriceAdjustment } from '../utils';
+import { calculatePriceAdjustment, getBasePrice } from '../utils';
 import BackButton from '../backButton';
 import { useTranslations } from 'next-intl';
 
@@ -35,7 +35,9 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
             
             // Ajuste de preço para projetos novos
             const priceAdjustment = calculatePriceAdjustment(clientCount, productCount, pageCount, companySize);
-            const baseEstimate = leadData.estimatedPrice || 5000;
+            const basePrice = getBasePrice(leadData.category, leadData.serviceType);
+            const projectSizeMultiplier = leadData.projectSize === 'small' ? 1 : leadData.projectSize === 'medium' ? 1.5 : 2.5;
+            const baseEstimate = basePrice * projectSizeMultiplier;
             updateData.estimatedPrice = Math.round(baseEstimate * priceAdjustment);
             
         } else if (leadData.category === 'maintenance') {
@@ -60,7 +62,9 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
             if (urgencyLevel === 'alta') priceAdjustment += 0.5;
             if (hasDocumentation === 'nao') priceAdjustment += 0.3;
             
-            const baseEstimate = leadData.estimatedPrice || 3000;
+            const basePrice = getBasePrice(leadData.category, leadData.serviceType);
+            const projectSizeMultiplier = leadData.projectSize === 'small' ? 1 : leadData.projectSize === 'medium' ? 1.5 : 2.5;
+            const baseEstimate = basePrice * projectSizeMultiplier;
             updateData.estimatedPrice = Math.round(baseEstimate * priceAdjustment);
             
         } else if (leadData.category === 'mentoring') {
@@ -84,7 +88,9 @@ export default function Step4ProjectDetails({ leadData, setLeadData, setStep }: 
             if (sessionDuration === 'longa') priceAdjustment += 0.4;
             if (mentorshipType === 'personalizada') priceAdjustment += 0.3;
             
-            const baseEstimate = leadData.estimatedPrice || 4000;
+            const basePrice = getBasePrice(leadData.category, leadData.serviceType);
+            const projectSizeMultiplier = leadData.projectSize === 'small' ? 1 : leadData.projectSize === 'medium' ? 1.5 : 2.5;
+            const baseEstimate = basePrice * projectSizeMultiplier;
             updateData.estimatedPrice = Math.round(baseEstimate * priceAdjustment);
         }
         
